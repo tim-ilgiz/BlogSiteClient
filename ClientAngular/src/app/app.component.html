@@ -1,0 +1,27 @@
+<div>
+
+    <div *ngIf="loading">
+      <h1>Идет загрузка...</h1>
+    </div>
+
+  <div class="div-head">
+    <div class="div-header">
+      <button class="btn-header"></button>
+      <button class="btn-header"></button>
+    </div>
+  </div>
+
+  <div class="div-main">
+      <div class="div-left">
+          <app-items (selectParentId)="GetCorrectItems($event)">
+          </app-items>
+      </div>
+
+      <div class="div-right">
+          <app-content [Posts]="CorrectItems"
+                       [ParentId]="selectItemId"
+                       [Loading]="loading">
+          </app-content>
+      </div>
+  </div>
+</div>

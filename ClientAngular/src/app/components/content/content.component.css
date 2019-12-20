@@ -1,0 +1,69 @@
+
+.div-container-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div-button {
+  position: absolute;
+  bottom: 0;
+}
+
+li {
+    margin: 10px;
+}
+
+p {
+  text-align: center;
+  margin-top: 2px;
+  text-wrap: normal;
+}
+
+.animation-up-post {
+  animation-name: PostUp;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.animation-down-post {
+  animation-name: PostDown;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+@keyframes PostUp {
+  0% {
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+  }
+}
+@keyframes PostDown {
+  0% {
+    width: 400px;
+    height: 400px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
+}
+input{
+  width: 300px;
+}
+.btn-add{
+  background: green;
+}
+.btn-remove{
+  background: brown;
+}
+.div-updateSize{
+  margin-right: 15px;
+  margin-top: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+}

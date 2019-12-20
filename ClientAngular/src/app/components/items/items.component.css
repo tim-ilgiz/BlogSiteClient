@@ -1,0 +1,29 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+mat-tree{
+  height: 100vh;
+  border-right: 3px solid black;
+  width: 300px;
+}
+
+.mat-tree-disable{
+  width: 0;
+}
+
+ul {
+    padding-inline-start: 10px;
+}
+.btn-add{
+  background: green;
+}
+.btn-remove{
+  background: brown;
+}
+.div-line {
+  border-top: 2px dashed darkmagenta;
+  height: 18px;
+}
+img.image-icons{
+  margin: 15px;
+  width: 15px;
+}

@@ -1,0 +1,62 @@
+<div class="div-container-row">
+  <div *ngFor="let post of Posts"
+       class="div-content-right"
+       resizeObserver
+       (getSizeEvent)="Onresize($event, post)"
+       [ngStyle]="{'background-image': 'url(' + post.image + ')' }"
+       [ngClass]="{'animation-up-post': post.isAnimate,
+                   'animation-down-post': post.isAnimate === false}" >
+
+    <div>
+      <p>id:{{post.id}}</p>
+      <p>Name:{{post.name}}</p>
+      <p>link:{{post.link}}</p>
+    </div>
+
+    <div *ngIf="post.postSize > maxSize">
+      <h6>название статьи</h6>
+      <label>
+        <input [(ngModel)]="post.name" />
+      </label>
+      <hr/>
+
+      <h6>ссылка на статью</h6>
+      <label>
+        <input [(ngModel)]="post.link" />
+      </label>
+    </div>
+
+    <p>{{post.postSize}}</p>
+    <div>
+      <div *ngIf="post.postSize>maxSize">
+
+        <button (click)="OnEditItem(post)"
+                class="btn-circle">
+        </button>
+        <button class="btn-circle"></button>
+
+      </div>
+
+      <div class="div-updateSize">
+
+        <button *ngIf="post.postSize<250"
+                class="btn-circle btn-up"
+                (click)="OnUpSize(post)">
+        </button>
+        <button *ngIf="post.postSize>250"
+                class="btn-circle btn-down"
+                (click)="OnDownSize(post)">
+        </button>
+        <button class="btn-circle" (click)="OnDeletePost(post)"></button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div (click)="OnAddPost()"
+       class="div-content-right"
+       [ngStyle]="{'background-image': 'url(https://picaflor-azul.com/images/plus-circle1.png)', 'background-size':'200px' }">
+  </div>
+</div>

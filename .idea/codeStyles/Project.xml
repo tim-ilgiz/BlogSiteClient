@@ -1,0 +1,15 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <HTMLCodeStyleSettings>
+      <option name="HTML_ATTRIBUTE_WRAP" value="4" />
+      <option name="HTML_ALIGN_TEXT" value="true" />
+      <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+    </HTMLCodeStyleSettings>
+    <JSCodeStyleSettings version="0">
+      <option name="INDENT_CHAINED_CALLS" value="false" />
+    </JSCodeStyleSettings>
+    <codeStyleSettings language="HTML">
+      <option name="WRAP_ON_TYPING" value="1" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>
