@@ -34,11 +34,10 @@ export class ContentComponent {
     this.Posts.push(newPost);
   }
 
-  async OnDeletePost(item:Post){
+  async OnDeletePost(item:Post, index:number){
     await this.repositoty.OnDeleteItem(item.id);
 
-    let deleteIndex:number = this.Posts.indexOf(item);
-    this.Posts.splice(deleteIndex,1)
+    this.Posts.splice(index,1); 
   }
 
   async OnEditItem(item:Post) {

@@ -1,10 +1,10 @@
 <div class="div-container-row">
-  <div *ngFor="let post of Posts"
+  <div *ngFor="let post of Posts; let i = index;"
        class="div-content-right"
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
        [ngStyle]="{'background-image': 'url(' + post.image + ')' }"
-       [ngClass]="{'animation-up-post': post.isAnimate,
+       [ngClass]="{'animation-up-post'  : post.isAnimate,
                    'animation-down-post': post.isAnimate === false}" >
 
     <div>
@@ -47,7 +47,7 @@
                 class="btn-circle btn-down"
                 (click)="OnDownSize(post)">
         </button>
-        <button class="btn-circle" (click)="OnDeletePost(post)"></button>
+        <button class="btn-circle" (click)="OnDeletePost(post, i)"></button>
 
       </div>
 
