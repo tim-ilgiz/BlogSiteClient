@@ -9,7 +9,7 @@
 
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
     <li class="mat-tree-node"  (mouseleave)="node.isVisible=false" (mouseenter)="node.isVisible=true">
-      <button mat-icon-button disabled ></button>
+      <button class="TreeButtons"  mat-icon-button disabled ></button>
 
       <button (click)="SelectItem(node)">{{node.name}}</button>
 
@@ -25,8 +25,8 @@
 
   <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
     <li>
-      <div class="mat-tree-node" (mouseleave)="node.isVisible=false" (mouseenter)="node.isVisible=true">
-        <button mat-icon-button matTreeNodeToggle
+      <div  class="mat-tree-node div-node" (mouseleave)="node.isVisible=false" (mouseenter)="node.isVisible=true">
+        <button mat-icon-button matTreeNodeToggle class="" class="treeMainButton"
                 [attr.aria-label]="'toggle ' + node.name">
           <mat-icon class="mat-icon-rtl-mirror">
             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}

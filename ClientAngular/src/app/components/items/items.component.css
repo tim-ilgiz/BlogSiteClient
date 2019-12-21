@@ -6,10 +6,44 @@ mat-tree{
   width: 300px;
 }
 
+mat-nested-tree-node h6 {
+  color: brown; 
+  line-height: 20px;
+  margin: 0;
+  min-height: auto;
+  padding: 0;
+  align-items: stretch;
+}
+.div-node{
+  height: 1.8em;;
+}
+
+.mat-tree-node {
+  min-height: 0;
+}
+.TreeButtons {
+  height: 0;
+}
 .mat-tree-disable{
   width: 0;
 }
-
+.treeMainButton{
+  margin-top: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+.mat-icon-button {
+  line-height: 0;
+  vertical-align: middle;
+  margin-top: 0;
+}
+.mat-icon {
+  line-height: 0;
+  vertical-align: middle;
+  margin-top: 0;
+}
 ul {
     padding-inline-start: 10px;
 }
