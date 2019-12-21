@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "FontCustom";
+  font-style: normal;
+  src: 
+  local('FontCustom')
+  url(../assets/fonts/6622.ttf) format('ttf');
+}
+
+* {
+    font-family: 'FontCustom';
+}
+
+p{
+  font-family: 'sdsd';
+}
+
 .example-tree-invisible {
     display: none;
   }
