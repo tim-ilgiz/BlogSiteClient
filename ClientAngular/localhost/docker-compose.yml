@@ -1,0 +1,20 @@
+version: '3.4'
+
+networks:
+  default:
+    external:
+      name: localhost_blogsiteapi-dev    
+    
+services:
+  blog-site: 
+    container_name: blog-site 
+    build:
+      context: ../
+      dockerfile: Dockerfile 
+    volumes: 
+      - ./ClientAngular:/usr/src/app
+    ports: 
+      - 4200:4200
+    command: > 
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+        
