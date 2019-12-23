@@ -8,5 +8,5 @@ COPY package.json .
 RUN npm install
 RUN npm install -g @angular/cli@latest
 COPY . . 
-EXPOSE 80
+EXPOSE 4200
 CMD ["npm", "start"]
