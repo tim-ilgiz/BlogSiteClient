@@ -46,6 +46,6 @@ export class DataService
   {
     await this.GetAllPost(id).toPromise().then((element:Post[]) =>
         element.forEach((c:Post) =>
-            items.push(new Post(c.id, c.name, c.link, c.image, c.parentId))));
+            items.push(new Post(c.id, c.name, c.linkUrl, c.image, c.parentId, c.click))));
   }
 }

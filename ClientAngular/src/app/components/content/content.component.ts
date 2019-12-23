@@ -28,7 +28,7 @@ export class ContentComponent {
   }
 
   async OnAddPost() {
-    let newPost = new Post(0, "new Post", "not link", "", this.ParentId);
+    let newPost = new Post(0, "new Post", "not link", "", this.ParentId, 0);
     await this.repositoty.CreateItem(newPost);
 
     this.Posts.push(newPost);
@@ -37,7 +37,7 @@ export class ContentComponent {
   async OnDeletePost(item:Post, index:number){
     await this.repositoty.OnDeleteItem(item.id);
 
-    this.Posts.splice(index,1); 
+    this.Posts.splice(index,1);
   }
 
   async OnEditItem(item:Post) {
