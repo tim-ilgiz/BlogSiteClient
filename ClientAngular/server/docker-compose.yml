@@ -1,0 +1,24 @@
+version: '3.4'
+
+networks:
+  default:
+    external:
+      name: webproxy  
+    
+services:
+  blog-site: 
+    container_name: blog-site 
+    build:
+      context: ../
+      dockerfile: Dockerfile 
+    environment:
+      VIRTUAL_HOST: detree.ru
+      VIRTUAL_PORT: 4200
+      LETSENCRYPT_HOST: detree.ru
+      LETSENCRYPT_EMAIL: mail@detree.ru
+      
+    volumes: 
+      - ./ClientAngular:/usr/src/app
+    command: > 
+      bash -c "npm install && ng serve --host 0.0.0.0 --disable-host-check"
+        
