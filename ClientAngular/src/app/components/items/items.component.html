@@ -11,7 +11,7 @@
     <li class="mat-tree-node"  (mouseleave)="node.isVisible=false" (mouseenter)="node.isVisible=true">
       <button class="TreeButtons"  mat-icon-button disabled ></button>
 
-      <button (click)="SelectItem(node)">{{node.name}}</button>
+      <button class="tree-button" (click)="SelectItem(node)">{{node.name}}</button>
 
       <div *ngIf=node.isVisible>
           <img (click)="OnAddTreeItem(node)"
@@ -27,7 +27,7 @@
     <li>
       <div  class="mat-tree-node div-node" (mouseleave)="node.isVisible=false" (mouseenter)="node.isVisible=true">
         <button mat-icon-button matTreeNodeToggle class="" class="treeMainButton"
-                [attr.aria-label]="'toggle ' + node.name">
+                [attr.aria-label]="'toggle '">
           <mat-icon class="mat-icon-rtl-mirror">
             {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
           </mat-icon>
@@ -35,7 +35,7 @@
       <div>
 
       </div>
-        <h6>{{node.name}}</h6>
+        <button class="tree-button-main">{{node.name}}</button>
 
         <div *ngIf=node.isVisible>
           <button (click)="OnAddTreeItem(node)" class="btn-circle btn-add"></button>

@@ -1,10 +1,13 @@
 <div>
-
-    <div *ngIf="loading">
-      <h1>Идет загрузка...</h1>
-    </div>
+  <div *ngIf="loading">
+    <h1>Идет загрузка...</h1>
+  </div>
 
   <div class="div-head">
+    <div class="div-logo">
+      <h1>DeTree</h1>
+    </div>
+
     <div class="div-header">
       <button class="btn-header"></button>
       <button class="btn-header"></button>
@@ -12,9 +15,15 @@
   </div>
 
   <div class="div-main">
+      <div class="left-panel">
+        <button [ngStyle]="{'background-image':'url(' + rightArrowImage + ')'}"></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
       <div class="div-left">
-          <app-items (selectParentId)="GetCorrectItems($event)">
-          </app-items>
+        <app-items (selectParentId)="GetCorrectItems($event)"></app-items>
       </div>
 
       <div class="div-right">
@@ -23,5 +32,20 @@
                        [Loading]="loading">
           </app-content>
       </div>
+  </div>
+  <div class="div-down">
+    <div class="div-info">
+        <label>
+          Введите вашу почту <input [(ngModel)]="loading">
+        </label>
+        <label>
+          Тема обращения <input [(ngModel)]="loading">
+        </label>
+        <label>
+          Текст <input [(ngModel)]="loading">
+        </label>
+    </div>
+
+    <p>Все права защищены</p>
   </div>
 </div>

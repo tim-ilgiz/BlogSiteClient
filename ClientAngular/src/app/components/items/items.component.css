@@ -5,9 +5,28 @@ mat-tree{
   border-right: 3px solid black;
   width: 300px;
 }
-
+.tree-button{
+  background: transparent;
+  border: 0;
+}
+.tree-button:hover{
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+.tree-button:focus{
+  border: 0 solid transparent;
+  color: green;
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+.tree-button-main{
+  border: 0 solid transparent;
+  background: transparent;
+  font-size: 1.2em;
+  color: brown;
+}
 mat-nested-tree-node h6 {
-  color: brown; 
+  color: brown;
   line-height: 20px;
   margin: 0;
   min-height: auto;
@@ -17,7 +36,6 @@ mat-nested-tree-node h6 {
 .div-node{
   height: 1.8em;;
 }
-
 .mat-tree-node {
   min-height: 0;
 }
@@ -28,7 +46,6 @@ mat-nested-tree-node h6 {
   width: 0;
 }
 .treeMainButton{
-  margin-top: 0;
   border-radius: 0;
   padding: 0;
   margin: 0;

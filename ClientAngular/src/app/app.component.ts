@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
   animationToLeftRight :boolean = true;
   CorrectItems:Post[]=new Array<Post>();
 
+  rightArrowImage = "../assets/images/rightArrow.png";
+
   constructor(repository: DataService) {
     this._repository = repository;
   }

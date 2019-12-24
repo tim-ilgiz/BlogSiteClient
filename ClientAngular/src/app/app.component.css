@@ -1,50 +1,52 @@
 @font-face {
   font-family: "FontCustom";
   font-style: normal;
-  src: 
-  local('FontCustom')
+  src:
+  local('FontCustom'),
   url(../assets/fonts/6622.ttf) format('ttf');
 }
 
 * {
-    font-family: 'FontCustom';
+  font-family: 'FontCustom';
 }
 
-p{
-  font-family: 'sdsd';
+.div-down {
+  padding: 30px;
+  clear: bottom;
+  height: 400px;
+  background: black;
+  color: white;
 }
 
 .example-tree-invisible {
     display: none;
   }
 
-  .example-tree ul,
-  .example-tree li {
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style-type: none;
-  }
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
 
-  .btn-menu {
-    width: 100px;
-    height: 100px;
-    right: 0;
-    margin-right: 0;
-    margin-top: 0;
-    position: fixed;
-  }
+.btn-menu {
+  width: 100px;
+  height: 100px;
+  right: 0;
+  margin-right: 0;
+  margin-top: 0;
+  position: fixed;
+}
 
 .btn-header {
-  width: 60px;
   background-color: dimgray;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  height: 70px;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
 }
 .div-header{
   position: absolute;
+  display: inline-block;
   right: 0;
 }
 .post-size {
@@ -52,11 +54,25 @@ p{
   height: 200px;
   margin: 10px;
 }
-
-  .div-head {
-    background: black;
-    height: 70px;
-  }
+.div-head {
+  background: black;
+  height: 70px;
+  padding: 10px;
+}
+.div-logo{
+  width: auto;
+  display: inline-block;
+  padding: 5px;
+}
+.div-head h1 {
+  color: white;
+}
+.div-info{
+  width: 10%;
+}
+.div-down input {
+  color: brown;
+}
 
 .div-left {
 }
@@ -96,3 +112,13 @@ p{
     width: 0;
   }
 }
+.left-panel {
+  width: 40px;
+  background: dodgerblue;
+}
+.left-panel button {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+}
+
