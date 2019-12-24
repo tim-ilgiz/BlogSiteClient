@@ -10,7 +10,7 @@
     <div>
       <p>id:{{post.id}}</p>
       <p>Name:{{post.name}}</p>
-      <p>link:{{post.link}}</p>
+      <p>link:{{post.linkUrl}}</p>
     </div>
 
     <div *ngIf="post.postSize > maxSize">
@@ -22,7 +22,7 @@
 
       <h6>ссылка на статью</h6>
       <label>
-        <input [(ngModel)]="post.link" />
+        <input [(ngModel)]="post.linkUrl" />
       </label>
     </div>
 

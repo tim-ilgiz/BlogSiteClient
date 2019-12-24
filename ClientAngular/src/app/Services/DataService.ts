@@ -21,7 +21,7 @@ export class DataService
 
   public GetAllPost(parentId:any)
   {
-      return this.http.get(this.url+"/GetItemsForThisParent", {params:new HttpParams().set("", parentId)});
+      return this.http.get(this.url+"/GetItemsForThisParent", {params:new HttpParams().set("parentId", parentId)});
   }
 
   public async CreateItem(item:Post) {
@@ -29,7 +29,7 @@ export class DataService
   }
 
   public async OnDeleteItem(id:number){
-    this.http.delete(this.url+"/OnDeleteItem/", {params:new HttpParams().set("", `${id}`)}).subscribe();
+    this.http.delete(this.url+"/OnDeleteItem/", {params:new HttpParams().set("id", `${id}`)}).subscribe();
   }
 
   public async OnEditItem(item:Post){
@@ -46,6 +46,6 @@ export class DataService
   {
     await this.GetAllPost(id).toPromise().then((element:Post[]) =>
         element.forEach((c:Post) =>
-            items.push(new Post(c.id, c.name, c.link, c.image, c.parentId))));
+            items.push(new Post(c.id, c.name, c.linkUrl, c.image, c.parentId, c.click))));
   }
 }
