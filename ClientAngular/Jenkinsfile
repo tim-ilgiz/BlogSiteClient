@@ -14,15 +14,18 @@ pipeline {
         stage('Build') {
             steps {
                 dir ('ClientAngular/server') {
-                	sh 'docker-compose build --no-cache'
+                    sh 'sync && echo 1 > /proc/sys/vm/drop_caches'
+                    sh 'sync && echo 2 > /proc/sys/vm/drop_caches'
+                    sh 'sync && echo 3 > /proc/sys/vm/drop_caches'
+                    sh 'docker-compose build'
                 }                                
             }
         }
         stage('Deploy') {
             steps {
                 dir ('ClientAngular/server') {
-                	sh 'docker system prune -f -a'
-                	sh 'docker-compose rm -f -s -v'
+                    sh 'docker system prune -f -a'
+                    sh 'docker-compose rm -f -s -v'
                     sh 'docker-compose up -d'
                 }
                 
