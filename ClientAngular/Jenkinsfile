@@ -14,15 +14,16 @@ pipeline {
         stage('Build') {
             steps {
                 dir ('ClientAngular/server') {
-                	sh 'docker-compose build'
+                	sh 'docker-compose build --no-cache'
                 }                                
             }
         }
         stage('Deploy') {
             steps {
                 dir ('ClientAngular/server') {
-                	sh 'docker-compose down --remove-orphans'
-                    sh 'docker-compose up -d --build'
+                	sh 'docker system prune -f -a'
+                	sh 'docker-compose rm -f -s -v'
+                    sh 'docker-compose up -d'
                 }
                 
             }
