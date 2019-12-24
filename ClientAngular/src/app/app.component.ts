@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
 
   GetCorrectItems(id: number)
   {
+    
     this.CorrectItems = [];
     this.selectItemId = id;
 
