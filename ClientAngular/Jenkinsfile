@@ -21,7 +21,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir ('ClientAngular/server') {
-                    sh 'docker system prune -f -a'
                     sh 'docker-compose rm -f -s -v'
                     sh 'docker-compose up -d'
                 }
