@@ -14,9 +14,6 @@ pipeline {
         stage('Build') {
             steps {
                 dir ('ClientAngular/server') {
-                    sh 'sync && echo 1 > /proc/sys/vm/drop_caches'
-                    sh 'sync && echo 2 > /proc/sys/vm/drop_caches'
-                    sh 'sync && echo 3 > /proc/sys/vm/drop_caches'
                     sh 'docker-compose build'
                 }                                
             }
