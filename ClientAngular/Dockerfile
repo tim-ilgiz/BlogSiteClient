@@ -1,7 +1,6 @@
 #Latest Node
 FROM node
 
-#Creating working folder
 RUN mkdir /app  
 WORKDIR /app
 COPY package.json .
