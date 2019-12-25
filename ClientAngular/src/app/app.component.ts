@@ -17,8 +17,10 @@ export class AppComponent implements OnInit {
   loading :boolean;
   animationToLeftRight :boolean = true;
   CorrectItems:Post[]=new Array<Post>();
+  isBool = false;
 
-  rightArrowImage = "../assets/images/rightArrow.png";
+  rightArrowImage = "assets/images/rightArrow.png";
+
 
   constructor(repository: DataService) {
     this._repository = repository;
@@ -28,12 +30,17 @@ export class AppComponent implements OnInit {
 
   GetCorrectItems(id: number)
   {
-    
+
     this.CorrectItems = [];
     this.selectItemId = id;
 
     this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
 
     this.loading = false;
+  }
+
+  showLeftPanel() {
+    this.isBool = !this.isBool;
+
   }
 }
