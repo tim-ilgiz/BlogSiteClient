@@ -1,5 +1,5 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 import { Item } from '@models/Item';
@@ -21,9 +21,9 @@ export class ItemsComponent implements OnInit {
   FolderItems: Item[] = [];
   TreeItems: TreeItems[] = [];
   visible = false;
-  animationToLeftRight = false;
   removeImage = "assets/images/clear.png";
 
+  @Input() animationToLeftRight:boolean = false;
   @Output() selectParentId = new EventEmitter<number>();
   treeControl = new NestedTreeControl<TreeItems>(node => node._children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
@@ -65,9 +65,5 @@ export class ItemsComponent implements OnInit {
 
     this.dataSource.data = undefined;
     this.dataSource.data = this.TreeItems;
-  }
-
-  DisableFree() {
-    this.animationToLeftRight=!this.animationToLeftRight;
   }
 }

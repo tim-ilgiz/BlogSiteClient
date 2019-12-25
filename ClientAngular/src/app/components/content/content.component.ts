@@ -18,6 +18,7 @@ export class ContentComponent {
 
   readonly maxSize :number = 390;
   style = "";
+  backgroundImage = "assets/images/backgroundImage.jpg";
 
   constructor(repository: DataService) {
     this.repositoty = repository;
