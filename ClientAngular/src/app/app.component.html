@@ -1,16 +1,16 @@
-<div>
+<div class="main">
   <div class="div-head">
     <div class="div-logo">
       <h1>DeTree</h1>
     </div>
-
     <div class="div-header">
-      <button [routerLink]="'/spaceComponent'" class="btn-header">Карточки</button>
-      <button class="btn-header"></button>
+      <a [routerLink]="'/spaceComponent'">Карточки</a>
+      <a routerLink="">Signed in</a>
+      <a>Signed out</a>
     </div>
   </div>
 
-        <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
   <div class="div-down">
     <div class="div-info">
@@ -24,7 +24,6 @@
           Текст <input [(ngModel)]="loading">
         </label>
     </div>
-
     <p>Все права защищены</p>
   </div>
 </div>

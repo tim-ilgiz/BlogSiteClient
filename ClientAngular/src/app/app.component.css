@@ -10,12 +10,16 @@
   padding: 0;
   margin: 0;
 }
+.div-header a{
+  margin-right: 20px;
+  font-size: 1.3em;
+}
 .div-down {
   padding: 30px;
-  clear: bottom;
   height: 400px;
   background: black;
   color: white;
+  bottom: 0;
 }
 .example-tree-invisible {
     display: none;
@@ -54,8 +58,11 @@
 }
 .div-head {
   background: black;
-  height: 70px;
+  height: 100px;
   padding: 10px;
+}
+.main{
+  position: relative;
 }
 .div-logo{
   width: auto;

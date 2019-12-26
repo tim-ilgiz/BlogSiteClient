@@ -13,6 +13,7 @@ import {StyleDirective} from "./Directives/style.directive";
 import {AngularResizeElementModule} from "angular-resize-element";
 import {AppRoutingModule} from "./app-routing-module";
 import { WorkSpaceComponent } from './work-spase/work-space.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { WorkSpaceComponent } from './work-spase/work-space.component';
     ContentComponent,
     StyleDirective,
     WorkSpaceComponent,
+    AuthorizationComponent,
   ],
   imports: [
     BrowserModule,
