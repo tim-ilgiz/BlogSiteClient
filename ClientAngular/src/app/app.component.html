@@ -1,42 +1,17 @@
 <div>
-  <div *ngIf="loading">
-    <h1>Идет загрузка...</h1>
-  </div>
-
   <div class="div-head">
     <div class="div-logo">
       <h1>DeTree</h1>
     </div>
 
     <div class="div-header">
-      <button class="btn-header"></button>
+      <button [routerLink]="'/spaceComponent'" class="btn-header">Карточки</button>
       <button class="btn-header"></button>
     </div>
   </div>
 
-  <div class="div-main">
-      <div class="left-panel">
-        <button (click)="showLeftPanel()">
-          <img [ngClass]="{'normal-img':isBool, 'inverse-img':!isBool}"
-               [src]="rightArrowImage" alt="">
-        </button>
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
-      </div>
-      <div class="div-left">
-        <app-items (selectParentId)="GetCorrectItems($event)"
-                   [animationToLeftRight]="isBool"></app-items>
-      </div>
+        <router-outlet></router-outlet>
 
-      <div class="div-right">
-          <app-content [Posts]="CorrectItems"
-                       [ParentId]="selectItemId"
-                       [Loading]="loading">
-          </app-content>
-      </div>
-  </div>
   <div class="div-down">
     <div class="div-info">
         <label>
