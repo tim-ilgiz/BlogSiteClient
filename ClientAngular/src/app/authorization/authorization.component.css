@@ -1,0 +1,26 @@
+.authorization-space{
+  min-height: 800px;
+  width: 100%;
+  position: relative;
+}
+.authorization-window{
+  border-radius: 30px;
+  width: 60%;
+  height: 40%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  background: skyblue;
+  padding: 50px;
+}
+.user-info{
+  width: 300px;
+  position: relative;
+}
+label{
+  width: 100px;
+}
+input{
+  position: absolute;
+  right: 0;
+}
