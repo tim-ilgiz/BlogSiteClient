@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material';
@@ -12,8 +11,8 @@ import { FormsModule } from '@angular/forms';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {StyleDirective} from "./Directives/style.directive";
 import {AngularResizeElementModule} from "angular-resize-element";
-import {DropdownModule} from "ngx-dropdown";
-
+import {AppRoutingModule} from "./app-routing-module";
+import { WorkSpaceComponent } from './work-spase/work-space.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +20,10 @@ import {DropdownModule} from "ngx-dropdown";
     ItemsComponent,
     ContentComponent,
     StyleDirective,
+    WorkSpaceComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatTreeModule,
     MatIconModule,
@@ -32,7 +31,8 @@ import {DropdownModule} from "ngx-dropdown";
     HttpClientModule,
     FormsModule,
     FlexLayoutModule,
-    AngularResizeElementModule
+    AngularResizeElementModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
