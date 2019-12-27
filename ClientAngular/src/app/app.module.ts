@@ -14,6 +14,7 @@ import {AngularResizeElementModule} from "angular-resize-element";
 import {AppRoutingModule} from "./app-routing-module";
 import { WorkSpaceComponent } from './work-spase/work-space.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthorizationComponent } from './authorization/authorization.component'
     StyleDirective,
     WorkSpaceComponent,
     AuthorizationComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

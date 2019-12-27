@@ -57,20 +57,27 @@
   margin: 10px;
 }
 .div-head {
-  background: black;
+  background: cornflowerblue;
   height: 100px;
   padding: 10px;
+  background: rgba(1, 183, 255, 0.2);
 }
 .main{
   position: relative;
+  background-image: url('../assets/images/space-background.jpg');
 }
 .div-logo{
   width: auto;
   display: inline-block;
   padding: 5px;
+  opacity: 1;
 }
-.div-head h1 {
-  color: white;
+h1 {
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
 }
 .div-info{
   width: 10%;
