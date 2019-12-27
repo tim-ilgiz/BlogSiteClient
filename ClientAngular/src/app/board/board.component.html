@@ -1,4 +1,9 @@
 <div>
-    <textarea>Задачи для Front</textarea>
-    <textarea>Задачи для Back</textarea>
+    <textarea [(ngModel)]="front"
+              name="message"
+              #message='ngModel'> Задачи для Front </textarea>
+
+    <textarea (change) = "OnTextChange($event)">Задачи для Back</textarea>
+
+    <button (click)="OnEditText()">Сохранить</button>
 </div>
