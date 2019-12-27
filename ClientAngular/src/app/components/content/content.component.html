@@ -29,16 +29,13 @@
     <p>{{post.postSize}}</p>
     <div>
       <div *ngIf="post.postSize>maxSize">
-
         <button (click)="OnEditItem(post)"
                 class="btn-circle">
         </button>
         <button class="btn-circle"></button>
-
       </div>
 
       <div class="div-updateSize">
-
         <button *ngIf="post.postSize<250"
                 class="btn-circle btn-up"
                 (click)="OnUpSize(post)">
@@ -48,11 +45,8 @@
                 (click)="OnDownSize(post)">
         </button>
         <button class="btn-circle" (click)="OnDeletePost(post, i)"></button>
-
       </div>
-
     </div>
-
   </div>
 
   <div (click)="OnAddPost()"
