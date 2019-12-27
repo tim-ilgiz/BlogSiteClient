@@ -8,7 +8,6 @@ import {Post} from '@models/Post';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-
   items: Post[] = [];
   front = '';
   back = '';
@@ -22,10 +21,15 @@ export class BoardComponent implements OnInit {
     this.repositoty.OnEditItem(this.items[0]);
     this.repositoty.OnEditItem(this.items[1]);
   }
-  OnEditText(front: string) {
-    console.log(front);
+  OnEditText() {
+    console.log(`${this.front} и ${this.back}`);
+    if (this.front !== undefined && this.back !== undefined) {
+      this.items[0].name = this.front;
+      this.items[1].name = this.back;
+    }
   }
+
   async ngOnInit() {
-    await this.repositoty.GetItemsForSelectFolder(100000, this.items);
+    await this.repositoty.GetItemsForSelectFolder(1000000, this.items);
   }
 }

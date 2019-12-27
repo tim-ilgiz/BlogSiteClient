@@ -1,9 +1,7 @@
 <div>
-    <textarea [(ngModel)]="front"
-              name="message"
-              #message='ngModel'> Задачи для Front </textarea>
-
-    <textarea (change) = "OnTextChange($event)">Задачи для Back</textarea>
-
+    <textarea [value]="front"
+              (input)="front = $event.target.value;"></textarea>
+    <textarea [value]="back"
+              (input)="back = $event.target.value;"></textarea>
     <button (click)="OnEditText()">Сохранить</button>
 </div>
