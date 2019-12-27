@@ -8,7 +8,8 @@ import {Post} from '@models/Post';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  items: Post[] = [];
+  itemsfront: Post[] = [];
+  itemsback: Post[] = [];
   front = '';
   back = '';
 
@@ -17,19 +18,24 @@ export class BoardComponent implements OnInit {
     this.repositoty = repositoty;
   }
 
-  OnSave() {
-    this.repositoty.OnEditItem(this.items[0]);
-    this.repositoty.OnEditItem(this.items[1]);
+  async OnSave() {
+    await this.repositoty.OnEditItem(this.itemsfront[0]).then(r => r);
+    await this.repositoty.OnEditItem(this.itemsback[0]).then(r => r);
   }
   OnEditText() {
     console.log(`${this.front} и ${this.back}`);
     if (this.front !== undefined && this.back !== undefined) {
-      this.items[0].name = this.front;
-      this.items[1].name = this.back;
+      this.itemsfront[0].name = this.front;
+      this.itemsback[0].name = this.back;
+
+      this.OnSave().then(r => r)
     }
   }
 
   async ngOnInit() {
-    await this.repositoty.GetItemsForSelectFolder(1000000, this.items);
+    await this.repositoty.GetItemsForSelectFolder(1000000, this.itemsfront);
+    await this.repositoty.GetItemsForSelectFolder(1000001, this.itemsback);
+    this.front = this.itemsfront[0].name;
+    this.back = this.itemsback[0].name;
   }
 }
