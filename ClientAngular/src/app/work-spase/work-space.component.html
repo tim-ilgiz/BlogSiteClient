@@ -3,9 +3,14 @@
     <div class="left-panel">
       <button (click)="showLeftPanel()">
         <img [ngClass]="{'normal-img':isBool, 'inverse-img':!isBool}"
-             [src]="rightArrowImage" alt="">
+             [src]="rightArrowIcon" alt="">
       </button>
-      <button></button>
+      <button>
+        <img [src]="addTreeItemIcon" alt="">
+      </button>
+      <button>
+        <img [src]="removeTreeItemIcon" alt="">
+      </button>
       <button></button>
       <button></button>
       <button></button>

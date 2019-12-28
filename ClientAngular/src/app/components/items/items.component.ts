@@ -21,6 +21,7 @@ export class ItemsComponent implements OnInit {
   FolderItems: Item[] = [];
   TreeItems: TreeItems[] = [];
   visible = false;
+
   removeImage = "assets/images/clear.png";
 
   @Input() animationToLeftRight:boolean = false;

@@ -15,7 +15,10 @@ export class WorkSpaceComponent implements OnInit {
   animationToLeftRight :boolean = true;
   CorrectItems:Post[]=new Array<Post>();
   isBool = false;
-  rightArrowImage = "assets/images/rightArrow.png";
+
+  rightArrowIcon = "assets/images/rightArrow.png";
+  removeTreeItemIcon = "assets/images/clear.png";
+  addTreeItemIcon = "assets/images/add.png";
 
   constructor(repository: DataService) {
     this._repository = repository;

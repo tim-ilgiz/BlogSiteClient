@@ -133,7 +133,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/assets/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,12 +144,13 @@
     <property name="ts.external.directory.path" value="D:\Repos\BlogSiteClient\ClientAngular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -224,6 +225,7 @@
       <workItem from="1577338324687" duration="16000" />
       <workItem from="1577377769890" duration="1651000" />
       <workItem from="1577387211752" duration="6466000" />
+      <workItem from="1577478503895" duration="3615000" />
     </task>
     <servers />
   </component>
