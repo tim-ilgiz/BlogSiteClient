@@ -50,6 +50,7 @@
   </div>
 
   <div (click)="OnAddPost()"
+       *ngIf="ParentId!==0"
        class="div-content-right"
        [ngStyle]="{'background-image': 'url(https://picaflor-azul.com/images/plus-circle1.png)', 'background-size':'200px' }">
   </div>
