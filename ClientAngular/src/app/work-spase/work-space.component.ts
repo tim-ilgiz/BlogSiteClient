@@ -11,6 +11,7 @@ export class WorkSpaceComponent implements OnInit {
   _repository: DataService;
 
   selectItemId :number;
+  hasSelectedItem = false;
   loading :boolean;
   animationToLeftRight :boolean = true;
   CorrectItems:Post[]=new Array<Post>();
@@ -37,5 +38,13 @@ export class WorkSpaceComponent implements OnInit {
 
   showLeftPanel() {
     this.isBool = !this.isBool;
+  }
+
+  OnRemoveTreeItem() {
+
+  }
+
+  OnAddTreeItem() {
+
   }
 }
