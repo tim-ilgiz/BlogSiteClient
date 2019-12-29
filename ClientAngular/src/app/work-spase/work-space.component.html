@@ -5,11 +5,15 @@
         <img [ngClass]="{'normal-img':isBool, 'inverse-img':!isBool}"
              [src]="rightArrowIcon" alt="">
       </button>
-      <button>
-        <img [src]="addTreeItemIcon" alt="">
+      <button [disabled]="hasSelectedItem"
+              (click)="OnAddTreeItem()">
+        <img [src]="addTreeItemIcon"
+             [ngClass]="{'img-disable': !hasSelectedItem}" alt="">
       </button>
-      <button>
-        <img [src]="removeTreeItemIcon" alt="">
+      <button [disabled]="hasSelectedItem"
+              (click)="OnRemoveTreeItem()">
+        <img [src]="removeTreeItemIcon"
+             [ngClass]="{'img-disable': !hasSelectedItem}" alt="">
       </button>
       <button></button>
       <button></button>

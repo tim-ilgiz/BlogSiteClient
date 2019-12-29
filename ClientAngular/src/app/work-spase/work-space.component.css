@@ -88,6 +88,11 @@ img {
   outline: none;
   border: 0 solid transparent;
 }
+.img-disable{
+  opacity:0.4;
+  -moz-opacity:0.8;
+
+}
 .normal-img {
 }
 .inverse-img {
