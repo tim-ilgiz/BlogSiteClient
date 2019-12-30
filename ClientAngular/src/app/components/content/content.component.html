@@ -1,9 +1,9 @@
 <div class="div-container-row">
   <div *ngFor="let post of Posts; let i = index;"
-       (click)="location.href='http://www.yandex.ru/';";
        class="div-content-right"
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
+       (click)="locationRef(post.linkUrl)"
        [ngClass]="{'animation-up-post'  : post.isAnimate,
                    'animation-down-post': post.isAnimate === false,
                    'background-image': 'url(' + backgroundImage + ')'}">

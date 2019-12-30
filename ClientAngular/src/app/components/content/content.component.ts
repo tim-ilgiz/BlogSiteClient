@@ -55,7 +55,7 @@ export class ContentComponent {
     this.style = "animation-down-post";
   }
 
-  locationRef() {
-      location.href = 'http://www.yandex.ru/';
+  locationRef(path: string) {
+      open(`${path}`);
   }
 }
