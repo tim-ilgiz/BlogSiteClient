@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '@models/../Services/DataService';
 import {Post} from "@models/Post";
+import {TreeItems} from "@models/FreeItems";
+import {forEachToken} from "tslint";
 
 @Component({
   selector: 'app-work-space',
@@ -34,7 +36,6 @@ export class WorkSpaceComponent implements OnInit {
     this.selectItemId = id;
 
     this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
-    this.loading = false;
   }
 
   showLeftPanel() {
@@ -49,7 +50,33 @@ export class WorkSpaceComponent implements OnInit {
 
   }
 
-  OnEditSelectTreeItemIdEvent(selectTreeItemId: number) {
-    this.selectedTreeItemId = selectTreeItemId;
+  OnEditSelectTreeItemIdEvent(treeItem: TreeItems) {
+    if (treeItem == undefined) {
+      this.selectedTreeItemId = undefined;
+      return;
+    }
+
+    let id = this.selectedTreeItemId = treeItem.item.id;
+    console.log(id);
+    let items: Post[] = [];
+
+    this._repository.GetItemsForSelectFolder(id, items).then(r => r);
+
+    treeItem.children.forEach(i => {
+        this._repository.GetItemsForSelectFolder(id, items).then(r => r);
+        if (i.children==undefined) return;
+
+        this.addTreeItems(i, items);
+    });
+    this.CorrectItems = items;
+  }
+  addTreeItems(treeItems: TreeItems, items: Post[]) {
+    if (treeItems.item != undefined){
+      this._repository.GetItemsForSelectFolder(treeItems.item.id, items).then(r => r);
+    }
+    treeItems.children.forEach(i => {
+      if (i.children==undefined) return;
+      this.addTreeItems(i, items);
+    });
   }
 }

@@ -24,10 +24,10 @@ export class ItemsComponent implements OnInit {
 
   @Input() animationToLeftRight:boolean = false;
   @Output() selectParentId = new EventEmitter<number>();
-  @Output() OnUpdateSelectId = new EventEmitter<number>();
+  @Output() OnUpdateSelectId = new EventEmitter<TreeItems>();
   @Output() selectedTreeItem: number = undefined;
 
-  treeControl = new NestedTreeControl<TreeItems>(node => node._children);
+  treeControl = new NestedTreeControl<TreeItems>(node => node.children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
   async ngOnInit() {
@@ -41,36 +41,37 @@ export class ItemsComponent implements OnInit {
     this._repository = repository;
   }
 
-  hasChild = (_: number, node: TreeItems) => !!node._children && node._children.length > 0;
+  hasChild = (_: number, node: TreeItems) => !!node.children && node.children.length > 0;
 
   OnAddTreeItem(treeItem: TreeItems) {
-    let newItem:Item = new Item(0, "new Folder", treeItem._item.id);
+    let newItem:Item = new Item(0, "new Folder", treeItem.item.id);
     let newTreeItem :TreeItems = new TreeItems(newItem);
-    treeItem._children.push(newTreeItem);
+    treeItem.children.push(newTreeItem);
 
     this.dataSource.data = undefined;
     this.dataSource.data = this.TreeItems;
   }
 
   OnDeleteItem(treeItem: TreeItems) {
-    let newItem:Item = new Item(0, "new Folder", treeItem._item.id);
+    let newItem:Item = new Item(0, "new Folder", treeItem.item.id);
     let newTreeItem :TreeItems = new TreeItems(newItem);
-    treeItem._children.push(newTreeItem);
+    treeItem.children.push(newTreeItem);
 
     this.dataSource.data = undefined;
     this.dataSource.data = this.TreeItems;
   }
 
-  OnSelectedTreeItem(post: Post) {
-    this.OnUpdateSelectId.emit(post.id);
+  OnSelectedTreeItem(post: TreeItems) {
+    this.OnUpdateSelectId.emit(post);
     //Добавить все вложенные элементы в это дерво.
+
 
     //Выбрать текущий id и сохранить ее в паременную.
     //Она же нужна будет для удаления этого дерево и добавления нового с parentId - this.id ;
   }
 
   SelectItem(folder: TreeItems) {
-    this.selectParentId.emit(folder._item.id);
+    this.selectParentId.emit(folder.item.id);
     this.OnUpdateSelectId.emit(undefined);
   }
 }

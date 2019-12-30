@@ -8,6 +8,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="325" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="Unnamed">
       <favorite_root url="file://$PROJECT_DIR$/ClientAngular/src" module="BlogGitClient" type="directory" klass="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode">
@@ -140,6 +143,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="ts.external.directory.path" value="D:\Repos\BlogSiteClient\ClientAngular\node_modules\typescript\lib" />
   </component>
@@ -164,6 +169,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="JavascriptDebugType" nameIsGenerated="true" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType">
+      <method v="2">
+        <option name="LaunchBrowser.Before.Run" url="http://localhost:4200" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -229,7 +244,8 @@
       <workItem from="1577642313155" duration="2468000" />
       <workItem from="1577682961670" duration="1773000" />
       <workItem from="1577684766714" duration="220000" />
-      <workItem from="1577735283714" duration="1051000" />
+      <workItem from="1577735283714" duration="5299000" />
+      <workItem from="1577740647207" duration="1234000" />
     </task>
     <servers />
   </component>
@@ -253,5 +269,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BlogSiteClient$Unnamed.dat" NAME="Unnamed Coverage Results" MODIFIED="1577739944537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

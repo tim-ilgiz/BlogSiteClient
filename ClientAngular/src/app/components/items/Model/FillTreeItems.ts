@@ -23,10 +23,10 @@ export class FillTreeItem
     {
       repositoryFolderItems.forEach (c =>
       {
-        if (i._item.id == c.parent) i._children.push(new TreeItems(c));
+        if (i.item.id == c.parent) i.children.push(new TreeItems(c));
       });
 
-      if (i._children.length > 0) this.addItems(i._children, repositoryFolderItems);
+      if (i.children.length > 0) this.addItems(i.children, repositoryFolderItems);
     });
   }
 }

@@ -33,7 +33,7 @@
       </div>
 
         <button class="tree-button-main"
-                (click)="OnSelectedTreeItem(node._item)">{{node.name}}</button>
+                (click)="OnSelectedTreeItem(node)">{{node.name}}</button>
 
         <div *ngIf=node.isVisible>
           <button (click)="OnAddTreeItem(node)" class="btn-circle btn-add"></button>
