@@ -8,28 +8,26 @@
       <button [disabled]="hasSelectedItem"
               (click)="OnAddTreeItem()">
         <img [src]="addTreeItemIcon"
-             [ngClass]="{'img-disable': !hasSelectedItem}" alt="">
+             [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
       <button [disabled]="hasSelectedItem"
               (click)="OnRemoveTreeItem()">
         <img [src]="removeTreeItemIcon"
-             [ngClass]="{'img-disable': !hasSelectedItem}" alt="">
+             [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
-      <button></button>
-      <button></button>
-      <button></button>
     </div>
 
     <div class="div-left">
       <app-items (selectParentId)="GetCorrectItems($event)"
-                 [animationToLeftRight]="isBool"></app-items>
+                 [animationToLeftRight]="isBool"
+                 (OnUpdateSelectId)="OnEditSelectTreeItemIdEvent($event)"></app-items>
     </div>
 
     <div class="div-right">
-              <app-content [Posts]="CorrectItems"
-                           [ParentId]="selectItemId"
-                           [Loading]="loading">
-              </app-content>
+      <app-content [Posts]="CorrectItems"
+                   [ParentId]="selectItemId"
+                   [Loading]="loading">
+      </app-content>
     </div>
   </div>
 </div>

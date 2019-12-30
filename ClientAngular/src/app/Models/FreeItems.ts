@@ -1,12 +1,12 @@
 import { Item } from '@models/Item';
 
 export class TreeItems {
-    _item: Item;
+    item: Item;
     name:string;
-    _children?: TreeItems [] = [];
+    children?: TreeItems [] = [];
 
     constructor (item:Item) {
-      this._item = item;
+      this.item = item;
       this.name = item.folderName;
     }
   }
