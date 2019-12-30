@@ -54,4 +54,8 @@ export class ContentComponent {
     post.isAnimate = false;
     this.style = "animation-down-post";
   }
+
+  locationRef(path: string) {
+      open(`${path}`);
+  }
 }

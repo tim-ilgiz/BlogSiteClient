@@ -30,7 +30,6 @@
   margin-bottom: 0;
   list-style-type: none;
 }
-
 .btn-menu {
   width: 100px;
   height: 100px;
@@ -39,7 +38,6 @@
   margin-top: 0;
   position: fixed;
 }
-
 .btn-header {
   background-color: dimgray;
   height: 30px;
@@ -51,13 +49,7 @@
   display: inline-block;
   right: 0;
 }
-.post-size {
-  width: 200px;
-  height: 200px;
-  margin: 10px;
-}
 .div-head {
-  background: cornflowerblue;
   height: 60px;
   padding: 10px;
   background: rgba(1, 183, 255, 0.2);
