@@ -12,7 +12,7 @@
       <div *ngIf=node.isVisible>
           <img (click)="OnAddTreeItem(node)"
                [src]="removeImage"
-               class = "image-icons">
+               class = "image-icons" alt="">
           <button (click)="OnDeleteItem(node)" class="btn-circle btn-remove"></button>
       </div>
 
@@ -31,7 +31,9 @@
       <div>
 
       </div>
-        <button class="tree-button-main">{{node.name}}</button>
+
+        <button class="tree-button-main"
+                (click)="OnSelectedTreeItem(node._item)">{{node.name}}</button>
 
         <div *ngIf=node.isVisible>
           <button (click)="OnAddTreeItem(node)" class="btn-circle btn-add"></button>

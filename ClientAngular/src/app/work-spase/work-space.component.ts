@@ -10,6 +10,7 @@ import {Post} from "@models/Post";
 export class WorkSpaceComponent implements OnInit {
   _repository: DataService;
 
+  selectedTreeItemId: number = undefined;
   selectItemId :number;
   hasSelectedItem = false;
   loading :boolean;
@@ -46,5 +47,9 @@ export class WorkSpaceComponent implements OnInit {
 
   OnAddTreeItem() {
 
+  }
+
+  OnEditSelectTreeItemIdEvent(selectTreeItemId: number) {
+    this.selectedTreeItemId = selectTreeItemId;
   }
 }
