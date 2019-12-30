@@ -55,7 +55,10 @@ export class ContentComponent {
     this.style = "animation-down-post";
   }
 
-  locationRef(path: string) {
+  locationRef(event: any,  path: string) {
+    if (event.currentTarget === event.target) {
       open(`${path}`);
+    }
+    event.stopPropagation();
   }
 }
