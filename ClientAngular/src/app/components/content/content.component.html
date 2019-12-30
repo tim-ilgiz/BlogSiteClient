@@ -3,14 +3,12 @@
        class="div-content-right"
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
+       (click)="locationRef($event, post.linkUrl)"
        [ngClass]="{'animation-up-post'  : post.isAnimate,
                    'animation-down-post': post.isAnimate === false,
                    'background-image': 'url(' + backgroundImage + ')'}">
-
     <div>
-      <p>id:{{post.id}}</p>
-      <p>Name:{{post.name}}</p>
-      <p>link:{{post.linkUrl}}</p>
+      <p>{{post.name}}</p>
     </div>
 
     <div *ngIf="post.postSize > maxSize">
@@ -52,6 +50,9 @@
   <div (click)="OnAddPost()"
        *ngIf="ParentId!==0"
        class="div-content-right"
-       [ngStyle]="{'background-image': 'url(https://picaflor-azul.com/images/plus-circle1.png)', 'background-size':'200px' }">
+       [ngStyle]="{'background-image': 'url(assets/images/add.png', 
+                  'background-size':'200px' ,
+                  'background-size':'30%',
+                  'background-repeat':'no-repeat'}">
   </div>
 </div>
