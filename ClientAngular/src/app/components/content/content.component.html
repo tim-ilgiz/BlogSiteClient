@@ -3,11 +3,10 @@
        class="div-content-right"
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
-       (click)="locationRef(post.linkUrl)"
+       (click)="locationRef($event, post.linkUrl)"
        [ngClass]="{'animation-up-post'  : post.isAnimate,
                    'animation-down-post': post.isAnimate === false,
                    'background-image': 'url(' + backgroundImage + ')'}">
-
     <div>
       <p>{{post.name}}</p>
     </div>
