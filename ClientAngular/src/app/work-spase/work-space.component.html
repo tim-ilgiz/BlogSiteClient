@@ -18,14 +18,15 @@
     </div>
 
     <div class="div-left">
-      <app-items (selectParentId)="GetCorrectItems($event)"
+      <app-items [updateTreeAction]="UpdateTreeItemsAction"
+                 [OnRemoveTreeItemAction]="RemoveTreeItemAction"
                  [animationToLeftRight]="isBool"
                  (OnUpdateSelectId)="OnEditSelectTreeItemIdEvent($event)"></app-items>
     </div>
 
     <div class="div-right">
       <app-content [Posts]="CorrectItems"
-                   [ParentId]="selectItemId"
+                   [ParentId]="selectedTreeItemId"
                    [Loading]="loading">
       </app-content>
     </div>

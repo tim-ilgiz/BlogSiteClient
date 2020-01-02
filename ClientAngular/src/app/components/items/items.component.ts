@@ -2,11 +2,10 @@ import { NestedTreeControl } from '@angular/cdk/tree';
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
-import { Item } from '@models/Item';
+import { Folder } from '@models/Folder';
 import { DataService } from '@models/../Services/DataService';
 import { TreeItems } from '@models/FreeItems';
 import { FillTreeItem } from './Model/FillTreeItems';
-import {Post} from "@models/Post";
 
 @Component({
   selector: 'app-items',
@@ -17,24 +16,29 @@ import {Post} from "@models/Post";
 export class ItemsComponent implements OnInit {
   _repository: DataService;
 
-  FolderItems: Item[] = [];
+  FolderItems: Folder[] = [];
   TreeItems: TreeItems[] = [];
   visible = false;
+  currentTreeItem: TreeItems;
   removeImage = "assets/images/clear.png";
 
+  @Input() updateTreeAction = new EventEmitter<void>();
+  @Input() OnRemoveTreeItemAction = new EventEmitter<any>();
   @Input() animationToLeftRight:boolean = false;
-  @Output() selectParentId = new EventEmitter<number>();
-  @Output() OnUpdateSelectId = new EventEmitter<TreeItems>();
   @Output() selectedTreeItem: number = undefined;
+  @Output() selectParentId = new EventEmitter<TreeItems>();
+  @Output() OnUpdateSelectId = new EventEmitter<TreeItems>();
 
   treeControl = new NestedTreeControl<TreeItems>(node => node.children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
   async ngOnInit() {
-
     await this._repository.FillFoldersArray(this.FolderItems);
     FillTreeItem.AddParentItems(this.FolderItems, this.TreeItems);
-    this.dataSource.data = this.TreeItems;
+
+    this.OnUpdateTreeItems();
+    this.OnRemoveTreeItemAction.subscribe(() => this.Remove())
+    this.updateTreeAction.subscribe(() => this.OnUpdateTreeItems());
   }
 
   constructor(repository: DataService) {
@@ -43,35 +47,37 @@ export class ItemsComponent implements OnInit {
 
   hasChild = (_: number, node: TreeItems) => !!node.children && node.children.length > 0;
 
-  OnAddTreeItem(treeItem: TreeItems) {
-    let newItem:Item = new Item(0, "new Folder", treeItem.item.id);
-    let newTreeItem :TreeItems = new TreeItems(newItem);
-    treeItem.children.push(newTreeItem);
+  public OnUpdateTreeItems() {
+    if (this.dataSource == undefined) return;
 
-    this.dataSource.data = undefined;
+    this.dataSource.data = [];
     this.dataSource.data = this.TreeItems;
   }
 
-  OnDeleteItem(treeItem: TreeItems) {
-    let newItem:Item = new Item(0, "new Folder", treeItem.item.id);
-    let newTreeItem :TreeItems = new TreeItems(newItem);
-    treeItem.children.push(newTreeItem);
-
-    this.dataSource.data = undefined;
-    this.dataSource.data = this.TreeItems;
+  OnSelectedTreeItem(treeItem: TreeItems) {
+    this.currentTreeItem = treeItem;
+    this.OnUpdateSelectId.emit(treeItem);
   }
 
-  OnSelectedTreeItem(post: TreeItems) {
-    this.OnUpdateSelectId.emit(post);
-    //Добавить все вложенные элементы в это дерво.
-
-
-    //Выбрать текущий id и сохранить ее в паременную.
-    //Она же нужна будет для удаления этого дерево и добавления нового с parentId - this.id ;
+  private Remove() {
+    this.TreeItems.forEach(i =>
+    {
+      if (i.item.id == this.currentTreeItem.item.id) {
+        let index = this.TreeItems.indexOf(i);
+        this.TreeItems.splice(index, 1);
+      }
+      if (i.children == undefined) return;
+      this.SearchTreeItem(i);
+    });
   }
-
-  SelectItem(folder: TreeItems) {
-    this.selectParentId.emit(folder.item.id);
-    this.OnUpdateSelectId.emit(undefined);
+  private SearchTreeItem(item: TreeItems) {
+    item.children.forEach(i => {
+      if(i.item.id == this.currentTreeItem.item.id) {
+        let index = item.children.indexOf(i);
+        item.children.splice(index, 1);
+      }
+      if (i.children != undefined) return;
+      this.SearchTreeItem(i);
+    });
   }
 }

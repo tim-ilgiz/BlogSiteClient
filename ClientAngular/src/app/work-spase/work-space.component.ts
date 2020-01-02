@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit} from '@angular/core';
 import {DataService} from '@models/../Services/DataService';
 import {Post} from "@models/Post";
 import {TreeItems} from "@models/FreeItems";
-import {forEachToken} from "tslint";
+import {Folder} from "@models/Folder";
 
 @Component({
   selector: 'app-work-space',
@@ -12,13 +12,14 @@ import {forEachToken} from "tslint";
 export class WorkSpaceComponent implements OnInit {
   _repository: DataService;
 
-  selectedTreeItemId: number = undefined;
-  selectItemId :number;
-  hasSelectedItem = false;
+  selectedTreeItemId: number = 0;
   loading :boolean;
   animationToLeftRight :boolean = true;
-  CorrectItems:Post[]=new Array<Post>();
+  CorrectItems:Post[] = new Array<Post>();
   isBool = false;
+  currentTreeItem: TreeItems;
+  UpdateTreeItemsAction = new EventEmitter<any>();
+  RemoveTreeItemAction = new EventEmitter<any>();
 
   rightArrowIcon = "assets/images/rightArrow.png";
   removeTreeItemIcon = "assets/images/clear.png";
@@ -30,24 +31,26 @@ export class WorkSpaceComponent implements OnInit {
 
   ngOnInit() { }
 
-  GetCorrectItems(id: number)
-  {
-    this.CorrectItems = [];
-    this.selectItemId = id;
-
-    this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
-  }
-
   showLeftPanel() {
     this.isBool = !this.isBool;
   }
 
   OnRemoveTreeItem() {
+    this._repository.OnDeleteFolder(this.selectedTreeItemId).then(r => r);
 
+    this.RemoveTreeItemAction.emit();
+    this.UpdateTreeItemsAction.emit();
   }
 
   OnAddTreeItem() {
+    let newItem:Folder = new Folder(0, "new Folder", this.selectedTreeItemId, "status");
 
+    this._repository.OnAddFolder(newItem).then(r => r);
+
+    let newTreeItem :TreeItems = new TreeItems(newItem);
+    this.currentTreeItem.children.push(newTreeItem);
+
+    this.UpdateTreeItemsAction.emit();
   }
 
   OnEditSelectTreeItemIdEvent(treeItem: TreeItems) {
@@ -56,8 +59,8 @@ export class WorkSpaceComponent implements OnInit {
       return;
     }
 
+    this.currentTreeItem = treeItem;
     let id = this.selectedTreeItemId = treeItem.item.id;
-    console.log(id);
     let items: Post[] = [];
 
     this._repository.GetItemsForSelectFolder(id, items).then(r => r);
@@ -71,7 +74,7 @@ export class WorkSpaceComponent implements OnInit {
     this.CorrectItems = items;
   }
   addTreeItems(treeItems: TreeItems, items: Post[]) {
-    if (treeItems.item != undefined){
+    if (treeItems.item != undefined) {
       this._repository.GetItemsForSelectFolder(treeItems.item.id, items).then(r => r);
     }
     treeItems.children.forEach(i => {

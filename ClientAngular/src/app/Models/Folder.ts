@@ -1,4 +1,4 @@
-export class Item
+export class Folder
 {
     constructor (id:number=0, folderName:string, parent:number, status:string = null)
     {
