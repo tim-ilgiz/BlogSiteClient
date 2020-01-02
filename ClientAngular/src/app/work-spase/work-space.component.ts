@@ -79,6 +79,7 @@ export class WorkSpaceComponent implements OnInit {
     }
     treeItems.children.forEach(i => {
       if (i.children==undefined) return;
+
       this.addTreeItems(i, items);
     });
   }

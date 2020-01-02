@@ -55,7 +55,12 @@ export class ItemsComponent implements OnInit {
   }
 
   OnSelectedTreeItem(treeItem: TreeItems) {
+    if(this.currentTreeItem != undefined) {
+      this.currentTreeItem.isChecked = false;
+    }
     this.currentTreeItem = treeItem;
+    treeItem.isChecked = true;
+
     this.OnUpdateSelectId.emit(treeItem);
   }
 
@@ -76,7 +81,7 @@ export class ItemsComponent implements OnInit {
         let index = item.children.indexOf(i);
         item.children.splice(index, 1);
       }
-      if (i.children != undefined) return;
+      if (i.children == undefined) return;
       this.SearchTreeItem(i);
     });
   }
