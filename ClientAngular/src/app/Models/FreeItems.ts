@@ -4,6 +4,7 @@ export class TreeItems {
     item: Folder;
     name:string;
     children?: TreeItems [] = [];
+    isChecked: boolean = false;
 
     constructor (item:Folder) {
       this.item = item;

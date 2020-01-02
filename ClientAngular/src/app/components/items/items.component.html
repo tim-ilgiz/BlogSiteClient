@@ -11,6 +11,7 @@
               disabled ></button>
 
       <button class="tree-button"
+              [ngClass]="{'isCheckedTreeItem': node.isChecked}"
               (click)="OnSelectedTreeItem(node)">{{node.name}}</button>
     </li>
   </mat-tree-node>
@@ -29,6 +30,7 @@
       </div>
 
         <button class="tree-button-main"
+                [ngClass]="{'isCheckedTreeItem': node.isChecked}"
                 (click)="OnSelectedTreeItem(node)">{{node.name}}</button>
 
       </div>
