@@ -1,11 +1,11 @@
-import { Item } from '@models/Item';
+import { Folder } from '@models/Folder';
 
 export class TreeItems {
-    item: Item;
+    item: Folder;
     name:string;
     children?: TreeItems [] = [];
 
-    constructor (item:Item) {
+    constructor (item:Folder) {
       this.item = item;
       this.name = item.folderName;
     }

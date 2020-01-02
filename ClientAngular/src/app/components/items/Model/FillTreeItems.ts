@@ -1,15 +1,15 @@
-import { Item } from '@models/Item';
+import { Folder } from '@models/Folder';
 import { TreeItems } from '@models/FreeItems';
 
 export class FillTreeItem
 {
-  static AddParentItems (repositoryFolderItems:Item[], treeItems:TreeItems[])
+  static AddParentItems (repositoryFolderItems:Folder[], treeItems:TreeItems[])
   {
     repositoryFolderItems.forEach(i =>
     {
       if (i.parent == 0)
       {
-        let item:Item = new Item (i.id, i.folderName, i.parent);
+        let item:Folder = new Folder (i.id, i.folderName, i.parent);
         let treeItem:TreeItems = new TreeItems(item);
         treeItems.push(treeItem);
       }
@@ -17,7 +17,7 @@ export class FillTreeItem
     this.addItems(treeItems, repositoryFolderItems);
   }
 
-  static addItems (list:TreeItems[], repositoryFolderItems:Item[])
+  static addItems (list:TreeItems[], repositoryFolderItems:Folder[])
   {
     list.forEach (i =>
     {
