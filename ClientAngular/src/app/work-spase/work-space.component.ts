@@ -58,7 +58,9 @@ export class WorkSpaceComponent implements OnInit {
       this.selectedTreeItemId = undefined;
       return;
     }
-
+    if (this.currentTreeItem != undefined) {
+      this.currentTreeItem.isEdit = false;
+    }
     this.currentTreeItem = treeItem;
     let id = this.selectedTreeItemId = treeItem.item.id;
     let items: Post[] = [];
@@ -82,5 +84,9 @@ export class WorkSpaceComponent implements OnInit {
 
       this.addTreeItems(i, items);
     });
+  }
+
+  OnEditTreeItem() {
+    this.currentTreeItem.isEdit = true;
   }
 }

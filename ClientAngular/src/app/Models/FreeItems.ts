@@ -5,6 +5,7 @@ export class TreeItems {
     name:string;
     children?: TreeItems [] = [];
     isChecked: boolean = false;
+    isEdit: boolean = false;
 
     constructor (item:Folder) {
       this.item = item;
