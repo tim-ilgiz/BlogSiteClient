@@ -1,5 +1,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+.div-node{
+  height: 1.8em;
+}
+
 mat-tree{
   height: 100vh;
   width: 300px;
@@ -41,9 +45,7 @@ mat-nested-tree-node h6 {
   padding: 0;
   align-items: stretch;
 }
-.div-node{
-  height: 1.8em;;
-}
+
 .mat-tree-node {
   min-height: 0;
 }
@@ -82,7 +84,7 @@ ul {
   border-top: 2px dashed darkmagenta;
   height: 18px;
 }
-img.image-icons{
+img .image-icons{
   margin: 15px;
   width: 15px;
 }
@@ -90,4 +92,23 @@ img.image-icons{
   color: green;
   text-decoration: underline;
   font-size: 1.2em;
+}
+.btn-edit{
+  width: 15px;
+  position: absolute;
+  top: 10%;
+  right: 5px;
+  height: 80%;
+}
+.div-edit {
+  height: auto;
+  position: relative;
+  margin: 2px;
+}
+.div-edit input{
+  width: 150px;
+  border-radius: 5px;
+  border: 0;
+  padding-right: 20%;
+  padding-left: 5%;
 }
