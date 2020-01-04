@@ -42,6 +42,10 @@ export class DataService {
     this.http.delete(this.url + "/OnDeleteFolder/", {params: new HttpParams().set("id", `${id}`)}).subscribe();
   }
 
+  public async OnEditFolder(folder: Folder) {
+    this.http.post(this.url + "/OnEditFolder/", folder).subscribe();
+  }
+
   public async FillFoldersArray(array: Folder[]) {
     await this.getItems().toPromise().then((element: Folder[]) =>
         element.forEach((i: Folder) =>

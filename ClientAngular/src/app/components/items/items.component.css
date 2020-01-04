@@ -94,11 +94,12 @@ img .image-icons{
   font-size: 1.2em;
 }
 .btn-edit{
-  width: 15px;
+  width: 16px;
   position: absolute;
   top: 10%;
   right: 5px;
   height: 80%;
+  border: 1px solid greenyellow;
 }
 .div-edit {
   height: auto;
@@ -106,9 +107,16 @@ img .image-icons{
   margin: 2px;
 }
 .div-edit input{
-  width: 150px;
+  width: 200px;
   border-radius: 5px;
   border: 0;
   padding-right: 20%;
   padding-left: 5%;
+}
+.btn-edit img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }

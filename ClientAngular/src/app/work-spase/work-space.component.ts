@@ -24,6 +24,7 @@ export class WorkSpaceComponent implements OnInit {
   rightArrowIcon = "assets/images/rightArrow.png";
   removeTreeItemIcon = "assets/images/clear.png";
   addTreeItemIcon = "assets/images/add.png";
+  editTreeNameIcon = "assets/images/pencil.png";
 
   constructor(repository: DataService) {
     this._repository = repository;
@@ -87,6 +88,7 @@ export class WorkSpaceComponent implements OnInit {
   }
 
   OnEditTreeItem() {
+
     this.currentTreeItem.isEdit = true;
   }
 }

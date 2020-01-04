@@ -20,7 +20,9 @@ export class ItemsComponent implements OnInit {
   TreeItems: TreeItems[] = [];
   visible = false;
   currentTreeItem: TreeItems;
+  editTreeName = "";
   removeImage = "assets/images/clear.png";
+  saveEditNameIcon = "assets/images/iconsOk.png";
 
   @Input() updateTreeAction = new EventEmitter<void>();
   @Input() OnRemoveTreeItemAction = new EventEmitter<any>();
@@ -59,6 +61,7 @@ export class ItemsComponent implements OnInit {
       this.currentTreeItem.isChecked = false;
     }
     this.currentTreeItem = treeItem;
+    this.editTreeName = treeItem.name;
     treeItem.isChecked = true;
 
     this.OnUpdateSelectId.emit(treeItem);
@@ -84,5 +87,16 @@ export class ItemsComponent implements OnInit {
       if (i.children == undefined) return;
       this.SearchTreeItem(i);
     });
+  }
+
+  OnSaveEditName() {
+    let editFolder = this.currentTreeItem.item;
+    if (this.editTreeName == undefined) return;
+    editFolder.folderName = this.editTreeName;
+
+    this._repository.OnEditFolder(editFolder).then(r => r);
+
+    this.currentTreeItem.name = this.editTreeName;
+    this.currentTreeItem.isEdit = false;
   }
 }

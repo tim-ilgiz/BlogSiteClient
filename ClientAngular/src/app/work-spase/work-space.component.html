@@ -16,7 +16,8 @@
              [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
       <button (click)="OnEditTreeItem()">
-
+        <img [src]="editTreeNameIcon"
+             [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
     </div>
 

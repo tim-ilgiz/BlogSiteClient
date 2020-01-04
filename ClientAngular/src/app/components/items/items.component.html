@@ -16,8 +16,10 @@
               (click)="OnSelectedTreeItem(node)">{{node.name}}</button>
               <ng-template #unset>
                 <div class="div-edit">
-                    <input [(ngModel)]="node.name">
-                  <button class="btn-edit"></button>
+                  <input [(ngModel)]="editTreeName">
+                  <button class="btn-edit" (click)="OnSaveEditName()">
+                    <img [src]="saveEditNameIcon" alt="">
+                  </button>
                 </div>
               </ng-template>
     </li>
@@ -42,9 +44,12 @@
                 [ngClass]="{'isCheckedTreeItem': node.isChecked}"
                 (click)="OnSelectedTreeItem(node)">{{node.name}}</button>
         <ng-template #unset>
-          <label>
-            <input [(ngModel)]="node.name">
-          </label>
+          <div class="div-edit">
+            <input [(ngModel)]="editTreeName">
+            <button class="btn-edit" (click)="OnSaveEditName()">
+              <img [src]="saveEditNameIcon" alt="">
+            </button>
+          </div>
         </ng-template>
 
       </div>
