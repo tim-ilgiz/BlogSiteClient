@@ -149,13 +149,13 @@
     <property name="ts.external.directory.path" value="D:\Repos\BlogSiteClient\ClientAngular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,7 +250,7 @@
       <workItem from="1577910217287" duration="2503000" />
       <workItem from="1577969007494" duration="6372000" />
       <workItem from="1577999397302" duration="2529000" />
-      <workItem from="1578080445272" duration="4005000" />
+      <workItem from="1578080445272" duration="7275000" />
     </task>
     <servers />
   </component>
