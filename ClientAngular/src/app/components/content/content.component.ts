@@ -19,6 +19,7 @@ export class ContentComponent {
   readonly maxSize :number = 390;
   style = "";
   backgroundImage = "assets/images/backgroundImage.jpg";
+  rollUpIcon = "assets/images/rollUp.png";
 
   constructor(repository: DataService) {
     this.repositoty = repository;

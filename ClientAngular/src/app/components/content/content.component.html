@@ -28,12 +28,14 @@
     <div>
       <div *ngIf="post.postSize>maxSize">
         <button (click)="OnEditItem(post)"
-                class="btn-circle">
+                class="btn-circle btn-save">Save
         </button>
         <button class="btn-circle"></button>
       </div>
 
       <div class="div-updateSize">
+        <button class="btn-circle btn-background-image"
+                (click)="OnDeletePost(post, i)"></button>
         <button *ngIf="post.postSize<250"
                 class="btn-circle btn-up"
                 (click)="OnUpSize(post)">
@@ -42,7 +44,6 @@
                 class="btn-circle btn-down"
                 (click)="OnDownSize(post)">
         </button>
-        <button class="btn-circle" (click)="OnDeletePost(post, i)"></button>
       </div>
     </div>
   </div>
@@ -50,7 +51,7 @@
   <div (click)="OnAddPost()"
        *ngIf="ParentId!==0"
        class="div-content-right"
-       [ngStyle]="{'background-image': 'url(assets/images/add.png', 
+       [ngStyle]="{'background-image': 'url(assets/images/add.png',
                   'background-size':'200px' ,
                   'background-size':'30%',
                   'background-repeat':'no-repeat'}">

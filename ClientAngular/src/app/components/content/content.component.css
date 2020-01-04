@@ -59,10 +59,20 @@ input{
   background: brown;
 }
 .div-updateSize{
-  margin-right: 15px;
-  margin-top: 5px;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
+  bottom: 0;
+  right: 5px;
 }
+.div-content-right {
+  padding: 1em;
+  color: aliceblue;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 2px solid #c333;
+  margin: 10px;
+  position: relative;
+  background-size: 500px;
+  background: rgba(27, 27, 41, 0.8);
+}
+
