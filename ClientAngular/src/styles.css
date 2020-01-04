@@ -28,35 +28,43 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .btn-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 15px;
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-  font-size: 16px;
-  margin-left: 8px;
+  width: 25px;
+  height: 25px;
+  border: 0 solid transparent;
+  background: transparent;
+  outline: none;
 }
 .btn-update{
   background: dodgerblue;
 }
 .btn-up{
-  background: darkmagenta;
+  background-image: url("assets/images/rollUp.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #0052CC;
+  border-radius: 10px;
 }
 .btn-down{
-  background: aqua;
-}
-.div-content-right {
-  color: aliceblue;
-  width: 200px;
-  height: 200px;
+  background-image: url("assets/images/rollUp.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+  border: 1px solid #0052CC;
   border-radius: 10px;
-  border: 2px solid #c333;
-  margin: 10px;
-  padding: 10px;
-  position: relative;
-  background-size: 500px;
-  background: rgba(27, 27, 41, 0.8);
 }
-
-
+.btn-background-image{
+  background-image: url("assets/images/clear.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 5px;
+}
+.btn-save{
+  color: green;
+  width: 100px;
+  height: 30px;
+  border: 1px solid green;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1em;
+}
