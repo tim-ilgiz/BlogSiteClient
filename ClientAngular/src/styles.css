@@ -7,22 +7,29 @@ html, body { height: 100%; }
     display: none;
   }
 
-  .example-tree ul,
-  .example-tree li {
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style-type: none;
-  }
+.ng-progress-bar.-active {
+  position: relative;
+  top: 60px;
+}
+.-active .ng-bar-placeholder {
+  height: 4px;
+}
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
 
-  .three-col-grid .grid-item  {
-    width: 20%;
-    float: left;
-  }
+.three-col-grid .grid-item  {
+  width: 20%;
+  float: left;
+}
 
-  .three-col-grid .grid-item-right  {
-    width: 80%;
-    float: right;
-  }
+.three-col-grid .grid-item-right  {
+  width: 80%;
+  float: right;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

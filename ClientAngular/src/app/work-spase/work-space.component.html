@@ -20,6 +20,7 @@
              [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
     </div>
+    <ng-progress [color]="'red'"></ng-progress>
 
     <div class="div-left">
       <app-items [updateTreeAction]="UpdateTreeItemsAction"

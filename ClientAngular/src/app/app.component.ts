@@ -1,7 +1,6 @@
-import { NgModule, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '@models/../Services/DataService';
-import {Post} from "@models/Post";
-
+import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,35 +11,24 @@ import {Post} from "@models/Post";
 export class AppComponent implements OnInit {
 
   _repository: DataService;
+  progressRef: NgProgressRef;
 
-  selectItemId :number;
   loading :boolean;
-  animationToLeftRight :boolean = true;
-  CorrectItems:Post[]=new Array<Post>();
-  isBool = false;
+  constructor(repository: DataService,
+              progress: NgProgress) {
 
-  rightArrowImage = "assets/images/rightArrow.png";
-
-
-  constructor(repository: DataService) {
     this._repository = repository;
+    this.progressRef = progress.ref('progressId');
+    this.progressRef.start();
+  }
+
+  StartLoading() {
+    this.progressRef.start();
+  }
+
+  CompleteLoading() {
+    this.progressRef.complete();
   }
 
   ngOnInit() { }
-
-  GetCorrectItems(id: number)
-  {
-
-    this.CorrectItems = [];
-    this.selectItemId = id;
-
-    this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
-
-    this.loading = false;
-  }
-
-  showLeftPanel() {
-    this.isBool = !this.isBool;
-
-  }
 }
