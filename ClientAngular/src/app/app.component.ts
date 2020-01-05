@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '@models/../Services/DataService';
 import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
+import {ProgressService} from "./Services/ProgressService";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [DataService]
+  providers: [DataService, ProgressService]
 })
 
 export class AppComponent implements OnInit {
@@ -15,19 +17,11 @@ export class AppComponent implements OnInit {
 
   loading :boolean;
   constructor(repository: DataService,
-              progress: NgProgress) {
+              progress: NgProgress,
+              progressService: ProgressService) {
 
     this._repository = repository;
-    this.progressRef = progress.ref('progressId');
-    this.progressRef.start();
-  }
-
-  StartLoading() {
-    this.progressRef.start();
-  }
-
-  CompleteLoading() {
-    this.progressRef.complete();
+    progressService.progressRef = progress.ref('progressId');
   }
 
   ngOnInit() { }

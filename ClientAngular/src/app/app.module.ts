@@ -25,7 +25,7 @@ import {NgProgressModule} from "@ngx-progressbar/core";
     StyleDirective,
     WorkSpaceComponent,
     AuthorizationComponent,
-    BoardComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
