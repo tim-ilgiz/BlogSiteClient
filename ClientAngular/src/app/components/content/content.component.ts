@@ -10,8 +10,6 @@ import {DataService} from "../../Services/DataService";
 })
 export class ContentComponent {
 
-  repositoty:DataService;
-
   @Input() Posts :Post[] = [];
   @Input() ParentId :number;
   @Input() Loading :boolean;
@@ -21,9 +19,7 @@ export class ContentComponent {
   backgroundImage = "assets/images/backgroundImage.jpg";
   rollUpIcon = "assets/images/rollUp.png";
 
-  constructor(repository: DataService) {
-    this.repositoty = repository;
-  }
+  constructor(public repository: DataService) { }
 
   Onresize(evt:number, post:Post) {
     post.postSize = evt;
@@ -31,19 +27,19 @@ export class ContentComponent {
 
   async OnAddPost() {
     let newPost = new Post(0, "new Post", "not link", "", this.ParentId, 0);
-    await this.repositoty.CreateItem(newPost);
+    await this.repository.CreateItem(newPost);
 
     this.Posts.push(newPost);
   }
 
   async OnDeletePost(item:Post, index:number){
-    await this.repositoty.OnDeleteItem(item.id);
+    await this.repository.OnDeleteItem(item.id);
 
     this.Posts.splice(index,1);
   }
 
   async OnEditItem(item:Post) {
-    await this.repositoty.OnEditItem(item);
+    await this.repository.OnEditItem(item);
   }
 
   OnUpSize(post: Post) {
