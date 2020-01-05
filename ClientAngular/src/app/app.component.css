@@ -10,6 +10,7 @@
   padding: 0;
   margin: 0;
 }
+
 .div-header a{
   margin-right: 20px;
   font-size: 1.3em;
@@ -44,13 +45,13 @@
   width: 30px;
   margin-right: 10px;
 }
-.div-header{
+.div-header {
   position: absolute;
   display: inline-block;
   right: 0;
   top: 20%;
 }
-.main{
+.main {
   position: relative;
   background-image: url('../assets/images/space-background.jpg');
 }
@@ -59,7 +60,7 @@
   background: rgba(1, 183, 255, 0.2);
   position: relative;
 }
-.div-logo{
+.div-logo {
   height: 100%;
   margin-left: 1.5em;
   display: inline-block;
@@ -77,4 +78,3 @@ h1 {
 .div-down input {
   color: brown;
 }
-

@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 import {Post} from "@models/Post";
 import {Folder} from "@models/Folder";
+import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
 
 @Injectable()
 

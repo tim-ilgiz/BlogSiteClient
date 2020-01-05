@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { ItemsComponent } from './components/items/items.component';
 import { ContentComponent } from './components/content/content.component';
@@ -15,6 +15,7 @@ import {AppRoutingModule} from "./app-routing-module";
 import { WorkSpaceComponent } from './work-spase/work-space.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 import { BoardComponent } from './board/board.component';
+import {NgProgressModule} from "@ngx-progressbar/core";
 
 @NgModule({
   declarations: [
@@ -36,9 +37,11 @@ import { BoardComponent } from './board/board.component';
     FormsModule,
     FlexLayoutModule,
     AngularResizeElementModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgProgressModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 
