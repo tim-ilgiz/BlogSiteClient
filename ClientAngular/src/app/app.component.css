@@ -46,35 +46,52 @@
   margin-right: 10px;
 }
 .div-header {
-  position: absolute;
+  position: fixed;
   display: inline-block;
   right: 0;
-  top: 20%;
+  top: 10px;
 }
 .main {
   position: relative;
   background-image: url('../assets/images/space-background.jpg');
 }
-.div-head {
-  height: 60px;
-  background: rgba(1, 183, 255, 0.2);
-  position: relative;
-}
+
 .div-logo {
   height: 100%;
   margin-left: 1.5em;
   display: inline-block;
-  position: relative;
+  position: fixed;
 }
 h1 {
-    color: white;
+  color: white;
   margin-top: 4px;
   margin-bottom: auto;
   min-height: auto;
+  margin-left: 10px;
 }
 .div-info{
   width: 10%;
 }
 .div-down input {
   color: brown;
+}
+.router-outlet-style {
+  position: relative;
+  top:60px;
+  left: 0;
+  margin-top: 60px;
+}
+
+.div-head {
+  height: 60px;
+  background: black;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+}
+.head-fixed {
+  position: relative;
+  height: 60px;
+  background: transparent;
+
 }
