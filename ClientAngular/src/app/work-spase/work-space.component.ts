@@ -88,7 +88,6 @@ export class WorkSpaceComponent implements OnInit {
   }
 
   OnEditTreeItem() {
-
     this.currentTreeItem.isEdit = true;
   }
 }
