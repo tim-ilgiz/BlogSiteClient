@@ -1,0 +1,17 @@
+.div-registration-content {
+  margin-left: 30%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.div-registration-content h1 {
+  width: 100%;
+  margin-bottom: 1.3em;
+}
+
+.input-registration input {
+  width: 40%;
+  margin-bottom: 1.2em;
+}

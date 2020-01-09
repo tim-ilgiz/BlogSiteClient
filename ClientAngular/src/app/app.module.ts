@@ -13,9 +13,10 @@ import {StyleDirective} from "./Directives/style.directive";
 import {AngularResizeElementModule} from "angular-resize-element";
 import {AppRoutingModule} from "./app-routing-module";
 import { WorkSpaceComponent } from './work-spase/work-space.component';
-import { AuthorizationComponent } from './authorization/authorization.component';
 import { BoardComponent } from './board/board.component';
 import {NgProgressModule} from "@ngx-progressbar/core";
+import {AuthorizationModule} from "./authorization/authorization.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,6 @@ import {NgProgressModule} from "@ngx-progressbar/core";
     ContentComponent,
     StyleDirective,
     WorkSpaceComponent,
-    AuthorizationComponent,
     BoardComponent
   ],
   imports: [
@@ -37,8 +37,10 @@ import {NgProgressModule} from "@ngx-progressbar/core";
     FormsModule,
     FlexLayoutModule,
     AngularResizeElementModule,
+    NgProgressModule,
+    AuthorizationModule,
     AppRoutingModule,
-    NgProgressModule
+    SharedModule
   ],
   providers: [
   ],
