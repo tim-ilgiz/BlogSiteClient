@@ -1,15 +1,13 @@
 <div class="authorization-space">
   <div class="authorization-window">
     <div class="user-info">
-      <h1>Login with</h1>
-      <br>
-      <label>
-        Login<input>
-        <br>
-        Password<input>
-        <br>
-        Email<input>
-      </label>
+
+      <router-outlet></router-outlet>
+
+      <div class="down-user-menu">
+        <a [routerLink]="'/LogIn'">Login with</a>  |
+        <a [routerLink]="'/Registration'">Registration</a>
+      </div>
     </div>
   </div>
 </div>

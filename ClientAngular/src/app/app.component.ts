@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '@models/../Services/DataService';
 import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
 import {ProgressService} from "./Services/ProgressService";
@@ -10,9 +10,9 @@ import {ProgressService} from "./Services/ProgressService";
   providers: [DataService, ProgressService]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  _repository: DataService;
+  repository: DataService;
   progressRef: NgProgressRef;
 
   loading :boolean;
@@ -20,9 +20,7 @@ export class AppComponent implements OnInit {
               progress: NgProgress,
               progressService: ProgressService) {
 
-    this._repository = repository;
+    this.repository = repository;
     progressService.progressRef = progress.ref('progressId');
   }
-
-  ngOnInit() { }
 }

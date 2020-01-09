@@ -3,7 +3,7 @@
       <h1>DeTree</h1>
     <div class="div-header">
       <a [routerLink]="'/spaceComponent'">Карточки</a>
-      <a [routerLink]="'/'">Signed in</a>
+      <a [routerLink]="''">Signed in</a>
       <a [routerLink]="'/boardComponent'">Доска</a>
     </div>
   </div>
@@ -14,7 +14,7 @@
                [spinner]="false"
                [color]="'#0052CC'"></ng-progress>
 
-  <router-outlet class="router-outlet-style"></router-outlet>
+  <router-outlet></router-outlet>
 
   <div class="div-down">
     <div class="div-info">
