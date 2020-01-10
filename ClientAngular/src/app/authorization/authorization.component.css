@@ -1,21 +1,27 @@
 .authorization-space{
-  min-height: 800px;
-  width: 100%;
-  position: relative;
+  min-height: 800px; width: 100%; position: relative;
 }
-.authorization-window{
+.authorization-window {
   border-radius: 15px;
-  width: 40%;
+  min-width: 350px;
+  width: 500px;
   height: 60%;
   position: absolute;
-  top: 20%;
-  left: 30%;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
   background: white;
   padding: 50px;
 }
+
+@media only screen and (max-width: 500px) {
+  .authorization-window {
+    width: 100%; height: 100%; border-radius: 0;
+  }
+}
+
 .user-info {
-  height: 100%;
-  position: relative;
+  height: 100%; position: relative;
 }
 
 .down-user-menu {
@@ -27,14 +33,34 @@
   justify-content: center;
 }
 div.down-user-menu a {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 10px; margin-right: 10px;
 }
 
-label{
-  width: 100px;
+.div-registration-content {
+  position: relative;
 }
-input{
-  position: absolute;
-  right: 0;
+
+.div-registration-content h1 {
+  margin-bottom: 1.3em;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.input-registration input {
+  width: 50%;
+  margin-bottom: 1.2em;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 1px solid #0052CC;
+}
+
+.btn-enter {
+  width: 50%;
+  height: 30px;
+  background: transparent;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
