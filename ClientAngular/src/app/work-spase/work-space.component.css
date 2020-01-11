@@ -15,23 +15,11 @@
   margin-top: 0;
   position: fixed;
 }
-.div-header{
-  position: absolute;
-  display: inline-block;
-  right: 0;
-}
-.div-head {
-  background: black;
-  height: 70px;
-  padding: 10px;
-}
+
 .div-info{
   width: 10%;
 }
-.div-left {
-  height: 100%;
-  opacity: 0.8;
-}
+
 .div-right {
 }
 .div-main {
@@ -78,7 +66,7 @@
 }
 
 img {
-  width: 100%;
+  width: 80%;
   padding: 5px;
   outline: none;
   border: 0 solid transparent;
@@ -92,6 +80,13 @@ img {
 .inverse-img {
   transform: scale(-1);
 }
+.div-left {
+  height: 100%; opacity: 0.8;
+}
 
-
+@media only screen and (max-width: 800px) {
+  .div-left {
+    width: 100%;
+  }
+}
 

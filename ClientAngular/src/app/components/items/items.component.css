@@ -10,6 +10,13 @@ mat-tree{
   padding-top: 5px;
   background: brown;
 }
+
+@media only screen and (max-width: 800px) {
+  mat-tree {
+    width: 100%;
+  }
+}
+
 .mat-tree {
   background: aliceblue;
   border-right: 1px solid dodgerblue;

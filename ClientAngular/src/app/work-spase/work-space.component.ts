@@ -7,7 +7,9 @@ import {Folder} from "@models/Folder";
 @Component({
   selector: 'app-work-space',
   templateUrl: './work-space.component.html',
-  styleUrls: ['./work-space.component.css']
+  styleUrls: ['./work-space.component.css',
+              '../app.component.css'
+  ]
 })
 export class WorkSpaceComponent implements OnInit {
   _repository: DataService;
