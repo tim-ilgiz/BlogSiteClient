@@ -5,11 +5,6 @@ html, body { height: 100%; }
 
 .example-tree-invisible {
     display: none;
-  }
-
-.ng-progress-bar.-active {
-  position: relative;
-  top: 60px;
 }
 .-active .ng-bar-placeholder {
   height: 4px;
@@ -51,7 +46,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border: 1px solid #0052CC;
   border-radius: 10px;
 }
-.btn-down{
+.btn-down {
   background-image: url("assets/images/rollUp.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -59,13 +54,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border: 1px solid #0052CC;
   border-radius: 10px;
 }
-.btn-background-image{
+.btn-background-image {
   background-image: url("assets/images/clear.png");
   background-repeat: no-repeat;
   background-size: 100%;
   margin-right: 5px;
 }
-.btn-save{
+.btn-save {
   color: green;
   width: 100px;
   height: 30px;
@@ -75,3 +70,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   bottom: 0;
   margin-bottom: 1em;
 }
+
