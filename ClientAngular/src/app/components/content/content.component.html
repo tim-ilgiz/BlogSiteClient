@@ -1,4 +1,5 @@
 <div class="div-container-row">
+
   <div *ngFor="let post of Posts; let i = index;"
        class="div-content-right"
        resizeObserver
@@ -11,28 +12,26 @@
       <p>{{post.name}}</p>
     </div>
 
-    <div *ngIf="post.postSize > maxSize">
-      <h6>название статьи</h6>
-      <label>
-        <input [(ngModel)]="post.name" />
-      </label>
-      <hr/>
+    <app-edit-window id="edit-window-1">
+        <div>
+            <h1>Редактирование элемента</h1>
+            <h6>название статьи</h6>
+            <p><input type="text" [(ngModel)]="post.name" /></p>
 
-      <h6>ссылка на статью</h6>
-      <label>
-        <input [(ngModel)]="post.linkUrl" />
-      </label>
-    </div>
-
-    <p>{{post.postSize}}</p>
-    <div>
-      <div *ngIf="post.postSize>maxSize">
-        <button (click)="OnEditItem(post)"
-                class="btn-circle btn-save">Save
-        </button>
-        <button class="btn-circle"></button>
+            <h6>ссылка на статью</h6>
+            <p><input type="text" [(ngModel)]="post.linkUrl" /></p>
+            <hr/>
+            <div>
+              <button (click)="OnEditItem(post)"
+                      class="btn-circle btn-save">Save
+              </button>
+              <button class="btn-circle"></button>
+          </div>
       </div>
 
+    </app-edit-window>
+
+    <div>
       <div class="div-updateSize">
         <button class="btn-circle btn-background-image"
                 (click)="OnDeletePost(post, i)"></button>

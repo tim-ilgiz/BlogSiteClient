@@ -1,11 +1,9 @@
 .div-container-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; flex-wrap: wrap;
 }
 
 .div-button {
-  position: absolute;
-  bottom: 0;
+  position: absolute; bottom: 0;
 }
 
 li {
@@ -13,9 +11,7 @@ li {
 }
 
 p {
-  text-align: center;
-  margin-top: 2px;
-  text-wrap: normal;
+  text-align: center; margin-top: 2px; text-wrap: normal;
 }
 
 .animation-up-post {

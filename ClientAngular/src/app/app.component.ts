@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '@models/../Services/DataService';
 import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
 import {ProgressService} from "./Services/ProgressService";
+import {EditWindowService} from "./editWindow";
 
 @Component({
   selector: 'app-root',
