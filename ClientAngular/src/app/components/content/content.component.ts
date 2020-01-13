@@ -1,12 +1,14 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import { Post } from "@models/Post";
 import {DataService} from "../../Services/DataService";
+import {EditWindowService} from "../../editWindow";
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
   changeDetection: ChangeDetectionStrategy.Default,
+  providers:[EditWindowService]
 })
 export class ContentComponent {
 
@@ -19,7 +21,8 @@ export class ContentComponent {
   backgroundImage = "assets/images/backgroundImage.jpg";
   rollUpIcon = "assets/images/rollUp.png";
 
-  constructor(public repository: DataService) { }
+  constructor(public repository: DataService,
+              private editWindowService: EditWindowService) { }
 
   Onresize(evt:number, post:Post) {
     post.postSize = evt;

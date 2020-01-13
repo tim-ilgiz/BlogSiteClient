@@ -1,0 +1,36 @@
+app-edit-window {
+  display: none;
+}
+
+.edit-window {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+}
+.edit-window-background {
+  /* modal background fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #000;
+  opacity: 0.75;
+  z-index: 900;
+}
+
+.edit-window-body {
+  padding: 20px;
+  background-color: white;
+  /* margin exposes part of the modal background */
+  margin: 40px;
+}
+
+body.edit-window-open {
+  overflow: hidden;
+}

@@ -17,6 +17,7 @@ import { BoardComponent } from './board/board.component';
 import {NgProgressModule} from "@ngx-progressbar/core";
 import {AuthorizationModule} from "./authorization/authorization.module";
 import {SharedModule} from "./shared/shared.module";
+import {EditWindowModule} from "./editWindow";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {SharedModule} from "./shared/shared.module";
     NgProgressModule,
     AuthorizationModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    EditWindowModule
   ],
   providers: [
   ],
