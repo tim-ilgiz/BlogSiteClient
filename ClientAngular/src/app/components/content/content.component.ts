@@ -17,9 +17,12 @@ export class ContentComponent {
   @Input() Loading :boolean;
 
   readonly maxSize :number = 390;
-  style = "";
   backgroundImage = "assets/images/backgroundImage.jpg";
   rollUpIcon = "assets/images/rollUp.png";
+  editWindowId = "edit-window-1";
+  style = "";
+  name = "";
+  url = "";
 
   constructor(public repository: DataService,
               private editWindowService: EditWindowService) { }
@@ -46,13 +49,13 @@ export class ContentComponent {
   }
 
   OnUpSize(post: Post) {
-    post.isAnimate = true;
-    this.style = "animation-up-post";
+    this.name = post.name;
+    this.url = post.linkUrl;
+    this.editWindowService.open(this.editWindowId);
   }
 
-  OnDownSize(post: Post) {
-    post.isAnimate = false;
-    this.style = "animation-down-post";
+  CloseEditWindow() {
+    this.editWindowService.close(this.editWindowId)
   }
 
   locationRef(event: any,  path: string) {
