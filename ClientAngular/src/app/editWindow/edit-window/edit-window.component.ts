@@ -1,32 +1,37 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {EditWindowService} from "../editWindow.service";
 
-
 @Component({
   selector: 'app-edit-window',
   templateUrl: './edit-window.component.html',
-  styleUrls: ['./edit-window.component.css']
+  styleUrls: ['./edit-window.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EditWindowComponent implements OnInit, OnDestroy {
   @Input() id: string;
   element: any;
 
   constructor(private editWindowService: EditWindowService,
-              private ref: ElementRef) {
-    this.element = ref.nativeElement;
+              public el: ElementRef) {
+    this.element = el.nativeElement;
+  }
+
+  ngOnInit(): void {
+    if (!this.id) {
+      console.error('window must have an id!');
+      return;
+    }
 
     document.body.appendChild(this.element);
 
     this.element.addEventListener('click', el => {
-      if (el.target.className === 'app-edit-window') {this.close();}
+      if (el.target.className === 'app-edit-window') {
+        this.close();
+      }
+    });
 
-      // add self (this modal instance) to the modal service so it's accessible from controllers
-      this.editWindowService.add(this);
-    })
-  }
-
-  ngOnInit() {
-    if (!this.id) {console.error('window must have an id!')}
+    // add self (this modal instance) to the modal service so it's accessible from controllers
+    this.editWindowService.add(this);
   }
 
   ngOnDestroy(): void {

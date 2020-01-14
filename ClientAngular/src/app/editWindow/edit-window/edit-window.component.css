@@ -2,7 +2,7 @@ app-edit-window {
   display: none;
 }
 
-.edit-window {
+.app-edit-window {
   position: fixed;
   top: 0;
   right: 0;
@@ -10,6 +10,7 @@ app-edit-window {
   left: 0;
   z-index: 1000;
   overflow: auto;
+  border-radius: 20px;
 }
 .edit-window-background {
   /* modal background fixed across whole screen */
@@ -31,6 +32,6 @@ app-edit-window {
   margin: 40px;
 }
 
-body.edit-window-open {
+.edit-window-open {
   overflow: hidden;
 }

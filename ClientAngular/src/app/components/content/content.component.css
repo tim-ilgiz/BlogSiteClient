@@ -1,3 +1,20 @@
+.edit-window-main-div {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.input-edit-window-div p input{
+  width: 100%;
+  padding-right: 10px;
+}
+
+.input-edit-window-div {
+  justify-content: flex-start;
+}
+
 .div-container-row {
   display: flex; flex-wrap: wrap;
 }
@@ -25,26 +42,7 @@ p {
   animation-duration: 3s;
   animation-iteration-count: 1;
 }
-@keyframes PostUp {
-  0% {
-    width: 200px;
-    height: 200px;
-  }
-  100% {
-    width: 400px;
-    height: 400px;
-  }
-}
-@keyframes PostDown {
-  0% {
-    width: 400px;
-    height: 400px;
-  }
-  100% {
-    width: 200px;
-    height: 200px;
-  }
-}
+
 input{
   width: 300px;
 }
@@ -72,3 +70,8 @@ input{
   background: rgba(27, 27, 41, 0.8);
 }
 
+
+@media only screen and (max-width: 800px) {
+  .div-content-right {
+  }
+}

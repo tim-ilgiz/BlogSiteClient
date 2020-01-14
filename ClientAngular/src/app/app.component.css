@@ -22,7 +22,11 @@
   align-items: center;
 }
 
-.logo h1 { font-size: 1.4em; text-align: center; font-family: "Cambria Math"; font-style: normal }
+.logo h1 {
+  font-size: 1.4em;
+  text-align: center;
+  font-style: normal;
+}
 
 .div-header {
   display: flex;

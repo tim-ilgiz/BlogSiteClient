@@ -2,6 +2,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .example-tree-invisible {
     display: none;
@@ -17,17 +18,13 @@ html, body { height: 100%; }
 }
 
 .three-col-grid .grid-item  {
-  width: 20%;
-  float: left;
+  width: 20%; float: left;
 }
 
 .three-col-grid .grid-item-right  {
   width: 80%;
   float: right;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .btn-circle {
   width: 25px;
@@ -61,13 +58,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-right: 5px;
 }
 .btn-save {
-  color: green;
+  color: #0052CC;
   width: 100px;
   height: 30px;
-  border: 1px solid green;
-  border-radius: 10px;
-  position: absolute;
+  border: 1px solid #0052CC;
+  border-radius: 5px;
   bottom: 0;
   margin-bottom: 1em;
+  margin-right: 10px;
 }
 
