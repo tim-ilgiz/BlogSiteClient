@@ -11,27 +11,43 @@ app-edit-window {
   z-index: 1000;
   overflow: auto;
   border-radius: 20px;
+  animation-name: window-animation;
+  animation-duration: 1s;
+
 }
 .edit-window-background {
   /* modal background fixed across whole screen */
+
   position: fixed;
-  top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
-
-  background-color: #000;
+  top: 0;
+  right: 0;
   opacity: 0.75;
-  z-index: 900;
+  background: #000;
 }
 
 .edit-window-body {
   padding: 20px;
   background-color: white;
+  width: 80%;
   /* margin exposes part of the modal background */
-  margin: 40px;
+  max-width: 1000px;
+  position: absolute;
+  left: 50%;
+  top:30%;
+  transform: translate(-50%, -50%);
 }
 
 .edit-window-open {
   overflow: hidden;
+}
+
+@keyframes window-animation {
+  from{
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
 }

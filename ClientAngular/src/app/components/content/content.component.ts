@@ -45,7 +45,11 @@ export class ContentComponent {
   }
 
   async OnEditItem(item:Post) {
+    item.name = this.name;
+    item.linkUrl = this.url;
     await this.repository.OnEditItem(item);
+
+    this.editWindowService.close(this.editWindowId);
   }
 
   OnUpSize(post: Post) {
