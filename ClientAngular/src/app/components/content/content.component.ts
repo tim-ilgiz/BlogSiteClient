@@ -16,6 +16,7 @@ export class ContentComponent {
   @Input() ParentId :number;
   @Input() Loading :boolean;
 
+  SelectedPost: Post;
   readonly maxSize :number = 390;
   backgroundImage = "assets/images/backgroundImage.jpg";
   rollUpIcon = "assets/images/rollUp.png";
@@ -44,17 +45,19 @@ export class ContentComponent {
     this.Posts.splice(index,1);
   }
 
-  async OnEditItem(item:Post) {
-    item.name = this.name;
-    item.linkUrl = this.url;
-    await this.repository.OnEditItem(item);
+  async OnEditItem() {
+    this.SelectedPost.name = this.name;
+    this.SelectedPost.linkUrl = this.url;
+    await this.repository.OnEditItem(this.SelectedPost);
 
     this.editWindowService.close(this.editWindowId);
   }
 
   OnUpSize(post: Post) {
+    this.SelectedPost = post;
     this.name = post.name;
     this.url = post.linkUrl;
+
     this.editWindowService.open(this.editWindowId);
   }
 

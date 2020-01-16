@@ -86,7 +86,12 @@ img {
 
 @media only screen and (max-width: 800px) {
   .div-left {
+    max-width: 400px;
     width: 100%;
+    position: absolute;
+    left: 40px;
+    z-index: 1000;
+    opacity: 1;
   }
 }
 
