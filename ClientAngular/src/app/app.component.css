@@ -12,6 +12,10 @@
   margin: 0;
 }
 
+.div-space {
+  min-height: 800px;
+}
+
 .div-head {
   display: flex;
   justify-content: space-between;
@@ -104,8 +108,4 @@ h1 {
   position: relative;
   height: 60px;
   background: transparent;
-}
-
-@media only screen and (max-width: 500px) {
-
 }

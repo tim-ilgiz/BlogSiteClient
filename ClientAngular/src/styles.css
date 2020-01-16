@@ -50,6 +50,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   transform: rotate(180deg);
   border: 1px solid #0052CC;
   border-radius: 10px;
+  width: 120px;
+  height: 120px;
 }
 .btn-background-image {
   background-image: url("assets/images/clear.png");
