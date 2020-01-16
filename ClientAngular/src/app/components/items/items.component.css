@@ -8,15 +8,17 @@ mat-tree{
   height: 100vh;
   width: 300px;
   padding-top: 5px;
-  background: brown;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   mat-tree {
+    position: absolute;
     width: 100%;
+    right: 0;
+    left: 40px;
+    z-index: 1000;
   }
 }
-
 .mat-tree {
   background: aliceblue;
   border-right: 1px solid dodgerblue;

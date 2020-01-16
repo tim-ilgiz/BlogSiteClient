@@ -20,44 +20,16 @@
   width: 10%;
 }
 
-.div-right {
-}
 .div-main {
   position: relative;
   display: flex;
 }
-.animation-to-left {
-  animation-name: AnimationToLeft;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-.animation-to-Right {
-  animation-name: AnimationToRight;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes AnimationToLeft {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 400px;
-  }
-}
-@keyframes AnimationToRight {
-  0% {
-    width: 400px;
-  }
-  100% {
-    width: 0;
-  }
-}
+
 .left-panel {
   min-width: 40px;
   width: 40px;
   background: #0052CC;
+  height: 100vh;
 }
 .left-panel button {
   width: 100%;
@@ -71,9 +43,9 @@ img {
   outline: none;
   border: 0 solid transparent;
 }
+
 .img-disable {
-  opacity:0.4;
-  -moz-opacity:0.8;
+  opacity:0.4; -moz-opacity:0.8;
 }
 .normal-img {
 }
@@ -81,17 +53,8 @@ img {
   transform: scale(-1);
 }
 .div-left {
-  height: 100%; opacity: 0.8;
+  height: 100vh; z-index: 999;
 }
 
-@media only screen and (max-width: 800px) {
-  .div-left {
-    max-width: 400px;
-    width: 100%;
-    position: absolute;
-    left: 40px;
-    z-index: 1000;
-    opacity: 1;
-  }
-}
+
 
