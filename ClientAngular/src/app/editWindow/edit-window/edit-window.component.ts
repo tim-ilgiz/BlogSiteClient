@@ -24,7 +24,7 @@ export class EditWindowComponent implements OnInit, OnDestroy {
 
     document.body.appendChild(this.element);
 
-    this.element.addEventListener('click', el => {
+    this.element.addEventListener('mouseup', el => {
       if (el.target.className === 'app-edit-window') {
         this.close();
       }
