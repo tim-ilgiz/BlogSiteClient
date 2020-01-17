@@ -1,13 +1,12 @@
 <div class="authorization-space">
   <div class="authorization-window">
     <div class="user-info">
-
-      <router-outlet></router-outlet>
-
-      <div class="down-user-menu">
+      <div class="registr-menu">
         <a [routerLink]="'/LogIn'">Login with</a>  |
         <a [routerLink]="'/Registration'">Registration</a>
       </div>
+
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
