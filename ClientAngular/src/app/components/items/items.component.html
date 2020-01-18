@@ -1,4 +1,4 @@
-<div class="ddd">
+<div class="div-tree">
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl"
           class="example-tree"
           [ngClass]="{'mat-tree-disable':animationToLeftRight}">
@@ -14,14 +14,14 @@
               class="tree-button"
               [ngClass]="{'isCheckedTreeItem': node.isChecked}"
               (click)="OnSelectedTreeItem(node)">{{node.name}}</button>
-              <ng-template #unset>
-                <div class="div-edit">
-                  <input [(ngModel)]="editTreeName">
-                  <button class="btn-edit" (click)="OnSaveEditName()">
-                    <img [src]="saveEditNameIcon" alt="">
-                  </button>
-                </div>
-              </ng-template>
+      <ng-template #unset>
+        <div class="div-edit">
+          <input [(ngModel)]="editTreeName">
+          <button class="btn-edit" (click)="OnSaveEditName()">
+            <img [src]="saveEditNameIcon" alt="">
+          </button>
+        </div>
+      </ng-template>
     </li>
   </mat-tree-node>
 

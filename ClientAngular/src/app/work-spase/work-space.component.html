@@ -1,6 +1,6 @@
-<div>
-  <div class="div-main">
-    <div class="left-panel">
+<div class="div-main">
+  <div class="left-panel-div">
+    <div class="left-panel-div-buttons">
       <button (click)="showLeftPanel()">
         <img [ngClass]="{'normal-img':isBool, 'inverse-img':!isBool}"
              [src]="rightArrowIcon" alt="">
@@ -19,12 +19,13 @@
       </button>
     </div>
     <ng-progress [color]="'red'"></ng-progress>
-
+  </div>
     <div class="div-left">
       <app-items [updateTreeAction]="UpdateTreeItemsAction"
                  [OnRemoveTreeItemAction]="RemoveTreeItemAction"
                  [animationToLeftRight]="isBool"
-                 (OnUpdateSelectId)="OnEditSelectTreeItemIdEvent($event)"></app-items>
+                 (OnUpdateSelectId)="OnEditSelectTreeItemIdEvent($event)"
+                 (IsComponentVisibleChanged)="OnEditVisibleAppItemComponent($event)"></app-items>
     </div>
 
     <div class="div-right">
@@ -33,5 +34,5 @@
                    [Loading]="loading">
       </app-content>
     </div>
-  </div>
 </div>
+

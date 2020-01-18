@@ -10,15 +10,6 @@ mat-tree{
   padding-top: 5px;
 }
 
-@media only screen and (max-width: 600px) {
-  mat-tree {
-    position: absolute;
-    width: 100%;
-    right: 0;
-    left: 40px;
-    z-index: 1000;
-  }
-}
 .mat-tree {
   background: aliceblue;
   border-right: 1px solid dodgerblue;
@@ -110,11 +101,13 @@ img .image-icons{
   height: 80%;
   border: 1px solid greenyellow;
 }
+
 .div-edit {
   height: auto;
   position: relative;
   margin: 2px;
 }
+
 .div-edit input{
   width: 200px;
   border-radius: 5px;
@@ -128,4 +121,18 @@ img .image-icons{
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  mat-tree {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+  }
+  .div-tree {
+    background: #0052CC;
+    position: absolute;
+    left: 40px;
+    right: 0;
+  }
 }

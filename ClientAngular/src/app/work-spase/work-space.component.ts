@@ -92,4 +92,8 @@ export class WorkSpaceComponent implements OnInit {
   OnEditTreeItem() {
     this.currentTreeItem.isEdit = true;
   }
+
+  OnEditVisibleAppItemComponent(visible: boolean) {
+    this.isBool = visible;
+  }
 }
