@@ -30,6 +30,7 @@ export class ItemsComponent implements OnInit {
   @Output() selectedTreeItem: number = undefined;
   @Output() selectParentId = new EventEmitter<TreeItems>();
   @Output() OnUpdateSelectId = new EventEmitter<TreeItems>();
+  @Output() IsComponentVisibleChanged = new EventEmitter<boolean>();
 
   treeControl = new NestedTreeControl<TreeItems>(node => node.children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
@@ -64,6 +65,8 @@ export class ItemsComponent implements OnInit {
     this.editTreeName = treeItem.name;
     treeItem.isChecked = true;
 
+    this.IsComponentVisibleChanged.emit(true);
+
     this.OnUpdateSelectId.emit(treeItem);
   }
 
@@ -78,6 +81,7 @@ export class ItemsComponent implements OnInit {
       this.SearchTreeItem(i);
     });
   }
+
   private SearchTreeItem(item: TreeItems) {
     item.children.forEach(i => {
       if(i.item.id == this.currentTreeItem.item.id) {

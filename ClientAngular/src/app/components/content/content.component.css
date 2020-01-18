@@ -72,11 +72,11 @@ input{
 
 .div-content-right {
   padding: 1em;
-  color: aliceblue;
+  color: wheat;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
-  border: 2px solid #c333;
+  border-radius: 8px;
+  border: 2px solid #0052CC;
   margin: 10px;
   position: relative;
   background: rgba(27, 27, 41, 0.8);
@@ -84,8 +84,10 @@ input{
 
 @media only screen and (max-width: 600px) {
   .div-content-right {
+    min-width: 100%;
     width: 100%;
-    height: 100px;
+    margin: 5px;
+    height: 120px;
     z-index: 1;
   }
 }
