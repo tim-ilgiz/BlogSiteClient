@@ -76,17 +76,23 @@ input{
   width: 200px;
   height: 200px;
   border-radius: 8px;
-  border: 2px solid #0052CC;
   margin: 10px;
   position: relative;
   background: rgba(27, 27, 41, 0.8);
+  border: 2px solid #212121;
 }
 
 @media only screen and (max-width: 600px) {
-  .div-content-right {
-    min-width: 100%;
+  .div-container-row {
+    position: relative;
+    right: 0;
     width: 100%;
-    margin: 5px;
+    padding-top: 10px;
+  }
+  .div-content-right {
+    width: 100%;
+    padding: 0;
+    margin: 0 10px 10px 10px;
     height: 120px;
     z-index: 1;
   }
