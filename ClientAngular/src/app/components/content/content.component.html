@@ -12,31 +12,6 @@
       <p>{{post.name}}</p>
     </div>
 
-    <app-edit-window [id]="editWindowId">
-        <div class="edit-window-main-div">
-
-            <h1>Редактирование элемента</h1>
-
-            <div class="input-edit-window-div">
-              <h6>название статьи</h6>
-              <p><input type="text" [(ngModel)]="name"/></p>
-            </div>
-
-            <div class="input-edit-window-div">
-              <h6>ссылка на статью</h6>
-              <p><input type="text" [(ngModel)]="url" /></p>
-            </div>
-
-            <hr/>
-            <div class="buttons-container">
-              <button class="btn-save"
-                      (click)="OnEditItem()">Save</button>
-              <button class="btn-save"
-                      (click)="CloseEditWindow()">Закрыть</button>
-            </div>
-        </div>
-    </app-edit-window>
-
     <div class="div-updateSize">
       <button class="btn-circle btn-background-image"
               (click)="OnDeletePost(post, i)"></button>
@@ -54,3 +29,29 @@
                   'background-repeat':'no-repeat'}">
   </div>
 </div>
+
+<app-edit-window [id]="editWindowId">
+  <div class="edit-window-main-div">
+
+    <h1>Редактирование элемента</h1>
+
+    <div class="input-edit-window-div">
+      <h6>название статьи</h6>
+      <p><input type="text" [(ngModel)]="name"/></p>
+    </div>
+
+    <div class="input-edit-window-div">
+      <h6>ссылка на статью</h6>
+
+      <p><input type="text" [(ngModel)]="url"/></p>
+    </div>
+    <div class="buttons-container">
+
+      <button class="btn-save"
+              (click)="OnEditItem()">Save</button>
+
+      <button class="btn-save"
+              (click)="CloseEditWindow()">Закрыть</button>
+    </div>
+  </div>
+</app-edit-window>
