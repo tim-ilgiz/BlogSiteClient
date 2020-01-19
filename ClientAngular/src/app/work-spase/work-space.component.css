@@ -7,6 +7,7 @@
   margin-bottom: 0;
   list-style-type: none;
 }
+
 .btn-menu {
   width: 100px;
   height: 100px;
@@ -45,7 +46,7 @@
   height: 40px;
   background: transparent;
   margin-top: 3px;
-  border: 2px solid darkblue;
+  border: 0 solid transparent;
 }
 
 img {
@@ -53,6 +54,7 @@ img {
   padding: 5px;
   outline: none;
   border: 0 solid transparent;
+  border-bottom: 2px solid black;
 }
 
 .img-disable {
@@ -60,7 +62,7 @@ img {
 }
 
 .normal-img {
-
+  width: 100%;
 }
 
 .inverse-img {

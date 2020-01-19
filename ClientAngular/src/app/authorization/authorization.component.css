@@ -27,7 +27,6 @@
   }
   .authorization-space {
     height: 100%; position: relative;
-    border: 2px solid darkcyan;
   }
   .input-registration input {
     width: auto;
