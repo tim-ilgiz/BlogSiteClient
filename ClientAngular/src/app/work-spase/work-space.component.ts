@@ -23,7 +23,7 @@ export class WorkSpaceComponent implements OnInit {
   UpdateTreeItemsAction = new EventEmitter<any>();
   RemoveTreeItemAction = new EventEmitter<any>();
 
-  rightArrowIcon = "assets/images/rightArrow.png";
+  rightArrowIcon = "assets/images/CollapsedIcon.png";
   removeTreeItemIcon = "assets/images/clear.png";
   addTreeItemIcon = "assets/images/add.png";
   editTreeNameIcon = "assets/images/pencil.png";

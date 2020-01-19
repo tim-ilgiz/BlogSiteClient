@@ -1,38 +1,43 @@
 <div class="div-main">
   <div class="left-panel-div">
+
     <div class="left-panel-div-buttons">
+
       <button (click)="showLeftPanel()">
-        <img [ngClass]="{'normal-img':isBool, 'inverse-img':!isBool}"
-             [src]="rightArrowIcon" alt="">
+        <img [src]="rightArrowIcon" alt="">
       </button>
-      <button (click)="OnAddTreeItem()">
+
+      <button (click)="OnAddTreeItem()" *ngIf="!isBool">
         <img [src]="addTreeItemIcon"
              [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
-      <button (click)="OnRemoveTreeItem()">
+
+      <button (click)="OnRemoveTreeItem()" *ngIf="!isBool">
         <img [src]="removeTreeItemIcon"
              [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
-      <button (click)="OnEditTreeItem()">
+
+      <button (click)="OnEditTreeItem()" *ngIf="!isBool">
         <img [src]="editTreeNameIcon"
              [ngClass]="{'img-disable': selectedTreeItemId==undefined}" alt="">
       </button>
     </div>
     <ng-progress [color]="'red'"></ng-progress>
   </div>
-    <div class="div-left">
-      <app-items [updateTreeAction]="UpdateTreeItemsAction"
+
+  <div class="div-left">
+    <app-items [updateTreeAction]="UpdateTreeItemsAction"
                  [OnRemoveTreeItemAction]="RemoveTreeItemAction"
                  [animationToLeftRight]="isBool"
                  (OnUpdateSelectId)="OnEditSelectTreeItemIdEvent($event)"
                  (IsComponentVisibleChanged)="OnEditVisibleAppItemComponent($event)"></app-items>
-    </div>
+  </div>
 
-    <div class="div-right">
-      <app-content [Posts]="CorrectItems"
-                   [ParentId]="selectedTreeItemId"
-                   [Loading]="loading">
-      </app-content>
-    </div>
+  <div class="div-right">
+    <app-content [Posts]="CorrectItems"
+                 [ParentId]="selectedTreeItemId"
+                 [Loading]="loading">
+    </app-content>
+  </div>
 </div>
 
