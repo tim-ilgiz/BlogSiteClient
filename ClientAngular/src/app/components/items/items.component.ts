@@ -23,7 +23,7 @@ export class ItemsComponent implements OnInit {
   currentTreeItem: TreeItems;
 
   mediaWindowSize = 600;
-  currentWindowSize: number;
+  currentWindowSize: number = window.innerWidth;
 
   editTreeName = "";
   removeImage = "assets/images/clear.png";
