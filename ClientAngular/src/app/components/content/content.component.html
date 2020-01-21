@@ -13,8 +13,14 @@
     </div>
 
     <div class="div-updateSize">
-      <button class="btn-circle btn-background-image"
-              (click)="OnDeletePost(post, i)"></button>
+      <div>
+        <button *ngIf="clickDeleteNumber==1"
+                class="btn-circle btn-delete-animation"
+                (click)="OnDeletePost(post, i)"></button>
+        <button class="btn-circle btn-background-image"
+                (click)="OnclickDeleteNumber()"></button>
+      </div>
+
       <button class="btn-circle btn-up"
               (click)="OnUpSize(post)"></button>
     </div>

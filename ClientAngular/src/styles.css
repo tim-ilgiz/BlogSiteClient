@@ -59,6 +59,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-size: 100%;
   margin-right: 5px;
 }
+
+.btn-delete-animation {
+  background-image: url("assets/images/clear.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 5px;
+  animation: 1s linear 0s normal none infinite running rot;
+
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .btn-save {
   color: #0052CC;
   width: 100px;

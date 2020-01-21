@@ -21,6 +21,8 @@ export class ContentComponent {
   backgroundImage = "assets/images/backgroundImage.jpg";
   rollUpIcon = "assets/images/rollUp.png";
   editWindowId = "edit-window-1";
+  clickDeleteNumber: number = 0;
+
   style = "";
   name = "";
   url = "";
@@ -70,5 +72,10 @@ export class ContentComponent {
       open(`${path}`);
     }
     event.stopPropagation();
+  }
+
+  OnclickDeleteNumber() {
+    this.clickDeleteNumber ++;
+    if (this.clickDeleteNumber == 2) {this.clickDeleteNumber = 0;}
   }
 }
