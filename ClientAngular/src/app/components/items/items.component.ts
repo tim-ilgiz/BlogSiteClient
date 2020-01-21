@@ -1,5 +1,5 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
-import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 import { Folder } from '@models/Folder';
@@ -14,12 +14,17 @@ import { FillTreeItem } from './Model/FillTreeItems';
   providers: [DataService]
 })
 export class ItemsComponent implements OnInit {
+
   _repository: DataService;
 
   FolderItems: Folder[] = [];
   TreeItems: TreeItems[] = [];
   visible = false;
   currentTreeItem: TreeItems;
+
+  mediaWindowSize = 600;
+  currentWindowSize: number;
+
   editTreeName = "";
   removeImage = "assets/images/clear.png";
   saveEditNameIcon = "assets/images/iconsOk.png";
@@ -31,7 +36,6 @@ export class ItemsComponent implements OnInit {
   @Output() selectParentId = new EventEmitter<TreeItems>();
   @Output() OnUpdateSelectId = new EventEmitter<TreeItems>();
   @Output() IsComponentVisibleChanged = new EventEmitter<boolean>();
-
   treeControl = new NestedTreeControl<TreeItems>(node => node.children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
@@ -40,7 +44,7 @@ export class ItemsComponent implements OnInit {
     FillTreeItem.AddParentItems(this.FolderItems, this.TreeItems);
 
     this.OnUpdateTreeItems();
-    this.OnRemoveTreeItemAction.subscribe(() => this.Remove())
+    this.OnRemoveTreeItemAction.subscribe(() => this.Remove());
     this.updateTreeAction.subscribe(() => this.OnUpdateTreeItems());
   }
 
@@ -65,7 +69,9 @@ export class ItemsComponent implements OnInit {
     this.editTreeName = treeItem.name;
     treeItem.isChecked = true;
 
-    this.IsComponentVisibleChanged.emit(true);
+    if (this.currentWindowSize < this.mediaWindowSize) {
+      this.IsComponentVisibleChanged.emit(true);
+    }
 
     this.OnUpdateSelectId.emit(treeItem);
   }
@@ -102,5 +108,9 @@ export class ItemsComponent implements OnInit {
 
     this.currentTreeItem.name = this.editTreeName;
     this.currentTreeItem.isEdit = false;
+  }
+
+  OnResize(event: any) {
+    this.currentWindowSize = event.target.innerWidth;
   }
 }
