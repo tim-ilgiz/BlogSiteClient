@@ -10,11 +10,6 @@ mat-tree{
   padding-top: 5px;
 }
 
-.mat-tree {
-  background: aliceblue;
-  border-right: 1px solid dodgerblue;
-  padding-left: 0;
-}
 .tree-button{
   background: transparent;
   border: 0;
@@ -134,5 +129,8 @@ img .image-icons{
     position: absolute;
     left: 40px;
     right: 0;
+  }
+  .mat-tree-disable {
+    
   }
 }
