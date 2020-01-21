@@ -1,6 +1,11 @@
 export class Post
 {
-    constructor (id:number, name:string, linkUrl:string, image:string, parentId:number, click:number)
+    constructor (id:number,
+                 name:string,
+                 linkUrl:string,
+                 image:string,
+                 parentId:number,
+                 click:number)
     {
         this.id = id;
         this.name = name;
@@ -17,4 +22,6 @@ export class Post
     isAnimate:boolean = undefined;
     postSize:number = 200;
     click:number;
+
+    deleteClick: number = 0;
 }

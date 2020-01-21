@@ -74,8 +74,8 @@ export class ContentComponent {
     event.stopPropagation();
   }
 
-  OnclickDeleteNumber() {
-    this.clickDeleteNumber ++;
-    if (this.clickDeleteNumber == 2) {this.clickDeleteNumber = 0;}
+  OnclickDeleteNumber(post: Post) {
+    post.deleteClick ++;
+    if (post.deleteClick == 2) {post.deleteClick = 0;}
   }
 }
