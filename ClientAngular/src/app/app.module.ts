@@ -18,6 +18,7 @@ import {NgProgressModule} from "@ngx-progressbar/core";
 import {AuthorizationModule} from "./authorization/authorization.module";
 import {SharedModule} from "./shared/shared.module";
 import {EditWindowModule} from "./editWindow";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {EditWindowModule} from "./editWindow";
     AuthorizationModule,
     AppRoutingModule,
     SharedModule,
-    EditWindowModule
+    EditWindowModule,
+    DragDropModule
   ],
   providers: [
   ],

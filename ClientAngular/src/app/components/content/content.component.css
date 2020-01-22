@@ -71,6 +71,7 @@ input{
 }
 
 .div-content-right {
+  cursor: alias;
   padding: 1em;
   color: wheat;
   width: 200px;
@@ -80,6 +81,10 @@ input{
   position: relative;
   background: rgba(27, 27, 41, 0.8);
   border: 2px solid #212121;
+}
+
+.div-content-right:hover {
+  z-index: 9999999;
 }
 
 @media only screen and (max-width: 600px) {
