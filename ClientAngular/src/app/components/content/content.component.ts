@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import { Post } from "@models/Post";
+import {Post} from "@models/Post";
 import {DataService} from "../../Services/DataService";
 import {EditWindowService} from "../../editWindow";
 
@@ -21,7 +21,6 @@ export class ContentComponent {
   backgroundImage = "assets/images/backgroundImage.jpg";
   rollUpIcon = "assets/images/rollUp.png";
   editWindowId = "edit-window-1";
-  clickDeleteNumber: number = 0;
 
   style = "";
   name = "";
