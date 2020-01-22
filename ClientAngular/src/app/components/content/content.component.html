@@ -1,7 +1,7 @@
 <div class="div-container-row">
 
   <div *ngFor="let post of Posts; let i = index;"
-       class="div-content-right"
+       class="div-content-right" cdkDrag
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
        (click)="locationRef($event, post.linkUrl)"
@@ -20,9 +20,11 @@
         <button class="btn-circle btn-background-image"
                 (click)="OnclickDeleteNumber(post)"></button>
       </div>
-
-      <button class="btn-circle btn-up"
-              (click)="OnUpSize(post)"></button>
+      <div>
+        <button class="btn-circle btn-up"
+                (click)="OnUpSize(post)"></button>
+        <button class="btn-circle btn-moving"></button>
+      </div>
     </div>
   </div>
 

@@ -27,6 +27,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .btn-circle {
+  margin: 5px;
   width: 25px;
   height: 25px;
   border: 0 solid transparent;
@@ -53,6 +54,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 120px;
   height: 120px;
 }
+
+.btn-moving {
+  background-image: url("assets/images/moveImage.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #0052CC;
+  border-radius: 10px;
+}
+
 .btn-background-image {
   background-image: url("assets/images/clear.png");
   background-repeat: no-repeat;
