@@ -64,6 +64,7 @@ export class WorkSpaceComponent implements OnInit {
     if (this.currentTreeItem != undefined) {
       this.currentTreeItem.isEdit = false;
     }
+
     this.currentTreeItem = treeItem;
     let id = this.selectedTreeItemId = treeItem.item.id;
     let items: Post[] = [];
@@ -71,9 +72,7 @@ export class WorkSpaceComponent implements OnInit {
     this._repository.GetItemsForSelectFolder(id, items).then(r => r);
 
     treeItem.children.forEach(i => {
-        this._repository.GetItemsForSelectFolder(id, items).then(r => r);
         if (i.children==undefined) return;
-
         this.addTreeItems(i, items);
     });
     this.CorrectItems = items;
