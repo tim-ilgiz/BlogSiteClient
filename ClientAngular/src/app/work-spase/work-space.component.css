@@ -23,7 +23,7 @@
 
 .div-main {
   position: relative;
-  height: 100vh;
+  height: 100%;
   display: flex;
 }
 
@@ -72,3 +72,5 @@ img {
 .div-left {
   height: 100vh; z-index: 999;
 }
+
+.div-right { width: 100%;}
