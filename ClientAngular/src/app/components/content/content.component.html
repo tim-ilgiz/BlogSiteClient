@@ -1,7 +1,7 @@
-<div class="div-container-row">
+<div class="div-container-row" cdkDropList>
 
-  <div *ngFor="let post of Posts; let i = index;"
-       class="div-content-right" cdkDrag
+  <div *ngFor="let post of Posts; let i = index;" cdkDrag
+       class="div-content-right"
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
        (click)="locationRef($event, post.linkUrl)"
