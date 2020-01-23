@@ -11,19 +11,21 @@
     <div>
       <p>{{post.name}}</p>
     </div>
+              
+    <button class="btn-circle btn-moving btn-position-fixed-left"></button>
 
     <div class="div-updateSize">
       <div>
         <button *ngIf="post.deleteClick==1"
                 class="btn-circle btn-delete-animation"
                 (click)="OnDeletePost(post, i)"></button>
+
         <button class="btn-circle btn-background-image"
                 (click)="OnclickDeleteNumber(post)"></button>
       </div>
       <div>
         <button class="btn-circle btn-up"
                 (click)="OnUpSize(post)"></button>
-        <button class="btn-circle btn-moving"></button>
       </div>
     </div>
   </div>
