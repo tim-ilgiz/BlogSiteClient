@@ -26,6 +26,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   float: right;
 }
 
+.btn-position-fixed-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .btn-circle {
   margin: 5px;
   width: 25px;
