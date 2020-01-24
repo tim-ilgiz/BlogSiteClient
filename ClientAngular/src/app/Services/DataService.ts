@@ -39,7 +39,7 @@ export class DataService {
 
   public async OnEditItem(item: Post) {
     this.progressService.StartLoading();
-    await this.http.post(this.url + '/OnEditItem/', item).subscribe(() => this.progressService.StartLoading());
+    await this.http.post(this.url + '/OnEditItem/', item).subscribe(() => this.progressService.CompleteLoading());
   }
 
   public async OnAddFolder(item:Folder) {

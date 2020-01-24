@@ -5,14 +5,13 @@
        resizeObserver
        (getSizeEvent)="Onresize($event, post)"
        (click)="locationRef($event, post.linkUrl)"
+       (cdkDragEnded)="OnDroppedMove(post ,i)"
        [ngClass]="{'animation-up-post'  : post.isAnimate,
                    'animation-down-post': post.isAnimate === false,
                    'background-image': 'url(' + backgroundImage + ')'}">
     <div>
       <p>{{post.name}}</p>
     </div>
-              
-    <button class="btn-circle btn-moving btn-position-fixed-left"></button>
 
     <div class="div-updateSize">
       <div>

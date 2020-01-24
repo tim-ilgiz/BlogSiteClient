@@ -2,6 +2,8 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {Post} from "@models/Post";
 import {DataService} from "../../Services/DataService";
 import {EditWindowService} from "../../editWindow";
+import {BehaviorSubject, Subject} from "rxjs";
+import {CdkDragDrop} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-content',
@@ -15,6 +17,7 @@ export class ContentComponent {
   @Input() Posts :Post[] = [];
   @Input() ParentId :number;
   @Input() Loading :boolean;
+  @Input() FocusFreeItemId :number = 0;
 
   SelectedPost: Post;
   readonly maxSize :number = 390;
@@ -76,5 +79,16 @@ export class ContentComponent {
   OnclickDeleteNumber(post: Post) {
     post.deleteClick ++;
     if (post.deleteClick == 2) {post.deleteClick = 0;}
+  }
+
+  OnDroppedMove(post: Post,index: number) {
+
+    if (this.FocusFreeItemId != 0) {
+      post.parentId = this.FocusFreeItemId;
+      this.repository.OnEditItem(post).then();
+
+      this.Posts.splice(index, 1);
+    }
+    //console.log(`вставляем в ${this.FocusFreeItemId}, id - ${id}`);
   }
 }

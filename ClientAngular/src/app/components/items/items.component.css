@@ -15,20 +15,7 @@ mat-tree{
   border: 0;
   outline: none;
 }
-.tree-button:hover{
-  font-size: 1.2em;
-  text-decoration: underline;
-}
-.tree-button:focus{
-  border: 0 solid transparent;
-  color: green;
-  text-decoration: underline;
-  font-size: 1.2em;
-}
-.tree-button:hover, .tree-button-main:hover{
-  color: blueviolet;
-  font-weight: 800;
-}
+
 .tree-button-main{
   border: 0 solid transparent;
   background: transparent;
@@ -36,6 +23,12 @@ mat-tree{
   color: brown;
   outline: none;
 }
+
+.tree-button:hover, .tree-button-main:hover{
+  color: blueviolet;
+  font-weight: 800;
+}
+
 mat-nested-tree-node h6 {
   color: brown;
   line-height: 20px;
@@ -135,6 +128,6 @@ img .image-icons{
     right: 0;
   }
   .mat-tree-disable {
-    
+
   }
 }
