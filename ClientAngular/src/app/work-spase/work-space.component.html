@@ -30,13 +30,15 @@
                [OnRemoveTreeItemAction]="RemoveTreeItemAction"
                [animationToLeftRight]="isBool"
                (OnUpdateSelectId)="OnEditSelectTreeItemIdEvent($event)"
-               (IsComponentVisibleChanged)="OnEditVisibleAppItemComponent($event)"></app-items>
+               (IsComponentVisibleChanged)="OnEditVisibleAppItemComponent($event)"
+               (UpdatedFocusItemId)="OnUpdateFocusItemId($event)"></app-items>
   </div>
 
   <div class="div-right">
     <app-content [Posts]="CorrectItems"
                  [ParentId]="selectedTreeItemId"
-                 [Loading]="loading">
+                 [Loading]="loading"
+                 [FocusFreeItemId]="focusItemId">
     </app-content>
   </div>
 </div>

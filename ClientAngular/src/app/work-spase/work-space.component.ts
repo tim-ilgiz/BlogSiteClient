@@ -15,11 +15,14 @@ export class WorkSpaceComponent implements OnInit {
   _repository: DataService;
 
   selectedTreeItemId: number = 0;
+  focusItemId: number = 0;
+
   loading :boolean;
   animationToLeftRight :boolean = true;
   CorrectItems:Post[] = new Array<Post>();
   isBool = false;
   currentTreeItem: TreeItems;
+
   UpdateTreeItemsAction = new EventEmitter<any>();
   RemoveTreeItemAction = new EventEmitter<any>();
 
@@ -94,5 +97,9 @@ export class WorkSpaceComponent implements OnInit {
 
   OnEditVisibleAppItemComponent(visible: boolean) {
     this.isBool = visible;
+  }
+
+  OnUpdateFocusItemId(focusId: number) {
+    this.focusItemId = focusId;
   }
 }

@@ -24,6 +24,7 @@ export class ItemsComponent implements OnInit {
 
   mediaWindowSize = 600;
   currentWindowSize: number = window.innerWidth;
+  focusFreeItemId: number;
 
   editTreeName = "";
   removeImage = "assets/images/clear.png";
@@ -32,10 +33,13 @@ export class ItemsComponent implements OnInit {
   @Input() updateTreeAction = new EventEmitter<void>();
   @Input() OnRemoveTreeItemAction = new EventEmitter<any>();
   @Input() animationToLeftRight:boolean = false;
+
   @Output() selectedTreeItem: number = undefined;
   @Output() selectParentId = new EventEmitter<TreeItems>();
   @Output() OnUpdateSelectId = new EventEmitter<TreeItems>();
   @Output() IsComponentVisibleChanged = new EventEmitter<boolean>();
+  @Output() UpdatedFocusItemId = new EventEmitter<number>();
+
   treeControl = new NestedTreeControl<TreeItems>(node => node.children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
@@ -112,5 +116,14 @@ export class ItemsComponent implements OnInit {
 
   OnResize(event: any) {
     this.currentWindowSize = event.target.innerWidth;
+  }
+
+  OnEnter(id: number) {
+    this.focusFreeItemId = id;
+    this.UpdatedFocusItemId.emit(id);
+  }
+
+  OnLeave() {
+    this.UpdatedFocusItemId.emit(0);
   }
 }
