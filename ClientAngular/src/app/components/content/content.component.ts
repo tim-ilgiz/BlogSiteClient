@@ -2,8 +2,6 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {Post} from "@models/Post";
 import {DataService} from "../../Services/DataService";
 import {EditWindowService} from "../../editWindow";
-import {BehaviorSubject, Subject} from "rxjs";
-import {CdkDragDrop} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-content',
@@ -12,6 +10,7 @@ import {CdkDragDrop} from "@angular/cdk/drag-drop";
   changeDetection: ChangeDetectionStrategy.Default,
   providers:[EditWindowService]
 })
+
 export class ContentComponent {
 
   @Input() Posts :Post[] = [];
@@ -29,8 +28,7 @@ export class ContentComponent {
   name = "";
   url = "";
 
-  constructor(public repository: DataService,
-              private editWindowService: EditWindowService) { }
+  constructor(public repository: DataService, private editWindowService: EditWindowService) { }
 
   Onresize(evt:number, post:Post) {
     post.postSize = evt;
@@ -89,6 +87,5 @@ export class ContentComponent {
 
       this.Posts.splice(index, 1);
     }
-    //console.log(`вставляем в ${this.FocusFreeItemId}, id - ${id}`);
   }
 }
