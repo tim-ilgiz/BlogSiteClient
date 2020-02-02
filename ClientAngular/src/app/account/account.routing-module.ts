@@ -1,15 +1,18 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
+import {ShellService} from "../shell/shell/shall.service";
+import {RegisterComponent} from "./register/register.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
-  // Shell.childRoutes([
-  //   { path: 'login', component: LoginComponent },
-  //   { path: 'register', component: RegisterComponent }
-  // ])
-];
+  ShellService.childRoutes ([
+    {path:'login', component: LoginComponent},
+    {path:'register', component: RegisterComponent}
+    ]
+  )];
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule],
   providers: []

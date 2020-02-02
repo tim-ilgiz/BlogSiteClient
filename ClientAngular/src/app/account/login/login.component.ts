@@ -8,8 +8,6 @@ import { AuthService } from "../../core/Authentication/auth.service";
 })
 export class LoginComponent implements OnInit {
 
-  tittle = 'Login';
-
   constructor(private authService: AuthService) { }
 
   login() {
@@ -17,4 +15,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  onSubmit() {
+
+  }
 }

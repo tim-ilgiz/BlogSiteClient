@@ -1,4 +1,4 @@
-import { Folder } from '@models/Folder';
+import { Folder } from './Folder';
 
 export class TreeItems {
     item: Folder;

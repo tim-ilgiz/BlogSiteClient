@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {Post} from "@models/Post";
-import {DataService} from "../../Services/DataService";
+import {Post} from "../Models/Post";
+import {DataService} from "../../shared/Services/DataService";
 import {EditWindowService} from "../../editWindow";
 
 @Component({

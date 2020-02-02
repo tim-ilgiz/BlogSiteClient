@@ -150,14 +150,17 @@
     <property name="ts.external.directory.path" value="D:\Repos\BlogSiteClient\ClientAngular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\core" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\shared" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\components" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\authorization" />
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\authorization" />
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -276,7 +279,11 @@
       <workItem from="1579806133480" duration="16375000" />
       <workItem from="1580189272965" duration="1424000" />
       <workItem from="1580229215856" duration="1775000" />
-      <workItem from="1580231032755" duration="4261000" />
+      <workItem from="1580231032755" duration="5417000" />
+      <workItem from="1580314508978" duration="1703000" />
+      <workItem from="1580401596421" duration="8851000" />
+      <workItem from="1580565873139" duration="1078000" />
+      <workItem from="1580672850211" duration="2113000" />
     </task>
     <servers />
   </component>
