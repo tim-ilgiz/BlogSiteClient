@@ -1,14 +1,14 @@
-import {Component, EventEmitter, OnInit} from '@angular/core';
-import {DataService} from '@models/../Services/DataService';
-import {Post} from "@models/Post";
-import {TreeItems} from "@models/FreeItems";
-import {Folder} from "@models/Folder";
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { DataService } from '../../shared/Services/DataService';
+import { Post } from "../Models/Post";
+import { TreeItems } from "../Models/FreeItems";
+import { Folder } from "../Models/Folder";
 
 @Component({
   selector: 'app-work-space',
   templateUrl: './work-space.component.html',
   styleUrls: ['./work-space.component.css',
-              '../app.component.css',
+              '../../app.component.css',
   ]
 })
 export class WorkSpaceComponent implements OnInit {

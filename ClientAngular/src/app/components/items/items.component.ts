@@ -2,10 +2,10 @@ import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
-import { Folder } from '@models/Folder';
-import { DataService } from '@models/../Services/DataService';
-import { TreeItems } from '@models/FreeItems';
+import { Folder } from '../Models/Folder';
+import { TreeItems } from '../Models/FreeItems';
 import { FillTreeItem } from './Model/FillTreeItems';
+import {DataService} from "../../shared/Services/DataService";
 
 @Component({
   selector: 'app-items',

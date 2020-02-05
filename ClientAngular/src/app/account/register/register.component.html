@@ -1,0 +1,23 @@
+<div class="login-div">
+  <form>
+    <h1>Регистрация</h1>
+
+    <input [(ngModel)]="userRegistration.name"
+           placeholder="Никнейм"
+           class="form-control">
+    <input [(ngModel)]="userRegistration.password"
+           placeholder="Пароль"
+           class="form-control">
+    <input [(ngModel)]="userRegistration.repeatPassword"
+           placeholder="Пароль еще раз"
+           class="form-control">
+    <input [(ngModel)]="userRegistration.email"
+           placeholder="Email"
+           class="form-control">
+
+    <button>Зарегестрироваться</button>
+    <br>
+      Уже зарегестрированы?
+      <a [routerLink]="['/login']">Войдите</a>
+  </form>
+</div>

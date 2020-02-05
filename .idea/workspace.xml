@@ -125,6 +125,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -136,7 +137,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/app/account" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -149,14 +150,18 @@
     <property name="ts.external.directory.path" value="D:\Repos\BlogSiteClient\ClientAngular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\Domain\Models\Auth" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\core" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\shared" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\components" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\authorization" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\account" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\authorization" />
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -272,7 +277,17 @@
       <workItem from="1579713231108" duration="818000" />
       <workItem from="1579721808205" duration="5056000" />
       <workItem from="1579797109771" duration="3307000" />
-      <workItem from="1579806133480" duration="5925000" />
+      <workItem from="1579806133480" duration="16375000" />
+      <workItem from="1580189272965" duration="1424000" />
+      <workItem from="1580229215856" duration="1775000" />
+      <workItem from="1580231032755" duration="5417000" />
+      <workItem from="1580314508978" duration="1703000" />
+      <workItem from="1580401596421" duration="8851000" />
+      <workItem from="1580565873139" duration="1078000" />
+      <workItem from="1580672850211" duration="2113000" />
+      <workItem from="1580747875487" duration="2938000" />
+      <workItem from="1580761135305" duration="2657000" />
+      <workItem from="1580833254308" duration="7124000" />
     </task>
     <servers />
   </component>

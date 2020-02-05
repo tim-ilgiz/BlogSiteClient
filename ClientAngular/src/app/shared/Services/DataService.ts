@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 
-import {Post} from "@models/Post";
-import {Folder} from "@models/Folder";
+import {Post} from "../../components/Models/Post";
+import {Folder} from "../../components/Models/Folder";
 import {ProgressService} from "./ProgressService";
 
 @Injectable()

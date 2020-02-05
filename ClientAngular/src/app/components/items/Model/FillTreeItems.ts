@@ -1,5 +1,5 @@
-import { Folder } from '@models/Folder';
-import { TreeItems } from '@models/FreeItems';
+import { Folder } from '../../Models/Folder';
+import { TreeItems } from '../../Models/FreeItems';
 
 export class FillTreeItem
 {

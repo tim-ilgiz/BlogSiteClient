@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService } from '@models/../Services/DataService';
 import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
-import {ProgressService} from "./Services/ProgressService";
+import {ProgressService} from "./shared/Services/ProgressService";
+import {DataService} from "./shared/Services/DataService";
 
 @Component({
   selector: 'app-root',

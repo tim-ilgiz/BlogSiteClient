@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from 'app/Services/DataService';
-import {Post} from '@models/Post';
+import {DataService} from 'app/shared/Services/DataService';
+import {Post} from '../Models/Post';
 
 @Component({
   selector: 'app-board',
