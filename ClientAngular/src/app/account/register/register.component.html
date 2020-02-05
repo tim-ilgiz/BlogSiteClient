@@ -1,5 +1,5 @@
 <div class="login-div">
-  <form>
+  <div>
     <h1>Регистрация</h1>
 
     <input [(ngModel)]="userRegistration.name"
@@ -7,17 +7,20 @@
            class="form-control">
     <input [(ngModel)]="userRegistration.password"
            placeholder="Пароль"
-           class="form-control">
+           class="form-control"
+           type="password">
     <input [(ngModel)]="userRegistration.repeatPassword"
            placeholder="Пароль еще раз"
-           class="form-control">
+           class="form-control"
+           type="password">
     <input [(ngModel)]="userRegistration.email"
            placeholder="Email"
+           type="email"
            class="form-control">
 
-    <button>Зарегестрироваться</button>
+    <button (click)='OnSubmit()'>Зарегестрироваться</button>
     <br>
       Уже зарегестрированы?
       <a [routerLink]="['/login']">Войдите</a>
-  </form>
+  </div>
 </div>

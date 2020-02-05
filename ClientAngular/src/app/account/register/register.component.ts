@@ -11,4 +11,7 @@ export class RegisterComponent {
   userRegistration: UserRegistration = new UserRegistration();
   constructor() { }
 
+  OnSubmit() {
+
+  }
 }
