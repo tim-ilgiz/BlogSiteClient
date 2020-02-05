@@ -6,12 +6,13 @@
            class="form-control"
            name="email"
            placeholder="you@youremail.com"
-           type="text">
+           type="email"
+           email required>
     <input [(ngModel)]="userRegistration.password"
            class="form-control"
            name="password"
            placeholder="Password"
-           type="text">
+           type="password">
 
 
     <button (click)="onSubmit()">Войти</button>
