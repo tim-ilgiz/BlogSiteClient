@@ -1,17 +1,4 @@
 <div class="main">
-  <div class="div-head">
-
-    <div class="logo">
-      <h1>DeTree</h1>
-    </div>
-
-    <div class="div-header">
-      <a [routerLink]="'/spaceComponent'">Карточки</a>
-      <a [routerLink]="''">Signed in</a>
-      <a [routerLink]="'/boardComponent'">Доска</a>
-    </div>
-  </div>
-
   <ng-progress id ="progressId"
                meteor
                [spinner]="false"
@@ -19,20 +6,5 @@
 
   <div class="div-space">
     <router-outlet></router-outlet>
-  </div>
-
-  <div class="div-down">
-    <div class="div-info">
-        <label>
-          Введите вашу почту <input [(ngModel)]="loading">
-        </label>
-        <label>
-          Тема обращения <input [(ngModel)]="loading">
-        </label>
-        <label>
-          Текст <input [(ngModel)]="loading">
-        </label>
-    </div>
-    <p>Все права защищены</p>
   </div>
 </div>

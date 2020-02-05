@@ -1,0 +1,40 @@
+.auth-main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+}
+
+.outlet-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 { font-size: 2em; margin: 0 0 50px 0; }
+
+.login-div {
+  width: 80vw;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10%;
+  input {
+    margin: 20px;
+    width: 400px;
+    height: 40px;
+    padding: 15px;
+  }
+  button {
+    width: 400px;
+    margin: 20px;
+    height: 40px;
+    background: brown;
+  }
+  a {
+    color: brown;
+  }
+}

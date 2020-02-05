@@ -1,3 +1,22 @@
-<div>
-  <p>DsdsdsSDFFFFFFFFFFFFFFFFFFFFFF!</p>
+<div class="login-div">
+  <form>
+    <h1>Login</h1>
+
+    <input [(ngModel)]="userRegistration.email"
+           class="form-control"
+           name="email"
+           placeholder="you@youremail.com"
+           type="text">
+    <input [(ngModel)]="userRegistration.password"
+           class="form-control"
+           name="password"
+           placeholder="Password"
+           type="text">
+
+
+    <button (click)="onSubmit()">Войти</button>
+    <br>
+    Еще нет аккаунта?
+    <a [routerLink]="['/register']">Зарегистрируйтесь</a>
+  </form>
 </div>

@@ -6,9 +6,10 @@ import {AccountRoutingModule} from "./account.routing-module";
 import {AuthService} from "../core/Authentication/auth.service";
 import {FormsModule} from "@angular/forms";
 import {ConfigService} from "../shared/config.service";
+import {AccountComponent} from "./account.component";
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, AccountComponent],
   imports: [
     CommonModule,
     FormsModule,

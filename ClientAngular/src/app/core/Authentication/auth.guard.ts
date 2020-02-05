@@ -9,12 +9,19 @@ import { AuthService } from './auth.service';
 
 export class AuthGuard implements CanActivate {
 
+  public canActivated: boolean = false;
+
   constructor(private router: Router, private authService: AuthService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     //if (this.authService.isAuthenticated()) return true;
+    if(!this.canActivated) {
+      this.router.navigate(['/login'], {queryParams: {redirect: state.url}, replaceUrl: true});
+    }
 
-    this.router.navigate(['/login'], {queryParams: {redirect: state.url}, replaceUrl: true});
-    return false;
+    return this.canActivated;
+  }
+  fakeActivate() {
+    this.canActivated = true;
   }
 }

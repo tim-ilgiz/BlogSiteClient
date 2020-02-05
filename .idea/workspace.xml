@@ -137,7 +137,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/app/account" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -151,13 +151,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\Domain\Models\Auth" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\core" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\shared" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\components" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\authorization" />
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\account" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
@@ -284,6 +285,9 @@
       <workItem from="1580401596421" duration="8851000" />
       <workItem from="1580565873139" duration="1078000" />
       <workItem from="1580672850211" duration="2113000" />
+      <workItem from="1580747875487" duration="2938000" />
+      <workItem from="1580761135305" duration="2657000" />
+      <workItem from="1580833254308" duration="7124000" />
     </task>
     <servers />
   </component>
