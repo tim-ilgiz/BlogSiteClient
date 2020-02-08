@@ -55,7 +55,7 @@
            placeholder="Email"
            required
            #email="ngModel"
-           pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"/>
+           pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
       <div [ngClass]="{'invalid-input-div':email.errors && isValidationForm,
                        'valid-input-div' : !email.errors && isValidationForm}"></div>
     </div>
