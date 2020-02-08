@@ -5,6 +5,7 @@ import { UserManager, UserManagerSettings, User } from 'oidc-client';
 import { BehaviorSubject } from "rxjs";
 import { ConfigService } from "../../shared/config.service";
 import { catchError } from 'rxjs/operators';
+import {UserRegistration} from "../../Domain/Models/Auth/UserRegistration";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class AuthService extends BaseService {
     });
   };
 
+  register(userRegistration: UserRegistration) {
+    return this.http.post(this.configService.authApiURI, userRegistration).pipe(catchError(this.handleError));
+  }
+
   login() {
     return this.manager.signinRedirect();
   }
@@ -33,10 +38,6 @@ export class AuthService extends BaseService {
   async completeAuthentication() {
     this.user = await this.manager.signinRedirectCallback();
     this._authNavStatusSource.next(this.isAuthenticated());
-  }
-
-  register(userRegistration: any) {
-    return this.http.post(this.configService.authApiURI + '/account', userRegistration).pipe(catchError(this.handleError));
   }
 
   isAuthenticated(): boolean {
@@ -59,7 +60,7 @@ export class AuthService extends BaseService {
 export function getClientSettings(): UserManagerSettings
 {
   return {
-    authority: 'http://localhost:5000',
+    authority: 'https://auth.detree.ru/api/account',
     client_id: 'angular_spa',
     redirect_uri: 'http://localhost:4200/auth-callback',
     post_logout_redirect_uri: 'http://localhost:4200/',

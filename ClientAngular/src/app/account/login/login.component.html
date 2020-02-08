@@ -1,21 +1,36 @@
 <div class="login-div">
-  <form>
+  <form novalidate (ngSubmit)="onSubmit()" >
     <h1>Login</h1>
 
-    <input [(ngModel)]="userRegistration.email"
-           class="form-control"
-           name="email"
-           placeholder="you@youremail.com"
-           type="email"
-           email required>
-    <input [(ngModel)]="userRegistration.password"
-           class="form-control"
-           name="password"
-           placeholder="Password"
-           type="password">
+    <div class="input-div">
+      <input [(ngModel)]="userRegistration.email"
+             name="email"
+             placeholder="you@youremail.com"
+             type="email"
+             required
+             #email="ngModel" />
+      <div [ngClass]="{'invalid-input-div':email.errors,
+                       'valid-input-div' : !email.errors}"></div>
+    </div>
+    <ul *ngIf="email.errors && email.dirty">
+      <li style="">Введите корректный email</li>
+    </ul>
 
+    <div class="input-div">
+      <input [(ngModel)]="userRegistration.password"
+             name="password"
+             placeholder="Password"
+             type="password"
+             minlength="5"
+             #pass="ngModel"/>
+      <div [ngClass]="{'invalid-input-div':pass.errors,
+                       'valid-input-div' : !pass.errors}"></div>
+    </div>
+    <ul *ngIf="pass.errors?.minlength">
+      <li>Пароль слишком корроткий</li>
+    </ul>
 
-    <button (click)="onSubmit()">Войти</button>
+    <button type="submit">Войти</button>
     <br>
     Еще нет аккаунта?
     <a [routerLink]="['/register']">Зарегистрируйтесь</a>
