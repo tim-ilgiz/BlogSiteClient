@@ -1,26 +1,71 @@
 <div class="login-div">
-  <div>
+
+  <template required>
+    <input>
+  </template>
+
+  <form #form="ngForm" novalidate (ngSubmit)="OnSubmit(form)">
     <h1>Регистрация</h1>
 
+    <div class="input-div">
     <input [(ngModel)]="userRegistration.name"
+           name="name"
            placeholder="Никнейм"
-           class="form-control">
-    <input [(ngModel)]="userRegistration.password"
-           placeholder="Пароль"
-           class="form-control"
-           type="password">
-    <input [(ngModel)]="userRegistration.repeatPassword"
-           placeholder="Пароль еще раз"
-           class="form-control"
-           type="password">
-    <input [(ngModel)]="userRegistration.email"
-           placeholder="Email"
-           type="email"
-           class="form-control">
+           required
+           #name="ngModel"/>
+      <div [ngClass]="{'invalid-input-div':name.errors && isValidationForm,
+                       'valid-input-div' : !name.errors&& isValidationForm }"></div>
+    </div>
+    <ul *ngIf="name.errors && isValidationForm">
+      <li>Поле не должно быть пустым</li>
+    </ul>
 
-    <button (click)='OnSubmit()'>Зарегестрироваться</button>
+    <div class="input-div">
+      <input [(ngModel)]="userRegistration.password"
+             name="password"
+             placeholder="Пароль"
+             #pass="ngModel"
+             required
+             minlength="5"
+             type="password"/>
+      <div [ngClass]="{'invalid-input-div':pass.errors && isValidationForm,
+                       'valid-input-div' : !pass.errors }"></div>
+    </div>
+    <ul *ngIf="pass.errors?.minlength && isValidationForm">
+      <li>Пароль слишком корроткий</li>
+    </ul>
+
+    <div class="input-div">
+    <input [(ngModel)]="userRegistration.repeatPassword"
+           name="repeatPassword"
+           placeholder="Пароль еще раз"
+           required
+           type="password"
+           #repeatPass="ngModel"/>
+      <div [ngClass]="{'invalid-input-div':repeatPass.errors && isValidationForm,
+                       'valid-input-div' : !repeatPass.errors && isValidationForm }"></div>
+    </div>
+    <ul *ngIf="(repeatPass.errors && repeatPass.dirty || repeatPass.value != pass.value) && isValidationForm">
+      <li>Ваш пароль не совпадает</li>
+    </ul>
+
+    <div class="input-div">
+    <input [(ngModel)]="userRegistration.email"
+           name="email"
+           placeholder="Email"
+           required
+           #email="ngModel"
+           pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"/>
+      <div [ngClass]="{'invalid-input-div':email.errors && isValidationForm,
+                       'valid-input-div' : !email.errors && isValidationForm}"></div>
+    </div>
+    <ul *ngIf="email.errors && email.dirty && isValidationForm">
+      <li>Введите корректный email</li>
+    </ul>
+
+    <button type="submit">Зарегестрироваться</button>
     <br>
       Уже зарегестрированы?
       <a [routerLink]="['/login']">Войдите</a>
-  </div>
+  </form>
 </div>

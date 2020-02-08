@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn:'root'
+})
 export class ConfigService {
 
   constructor() {}
 
   get authApiURI() {
-    return 'http://localhost:5000/api';
+    return 'https://auth.detree.ru/api/account';
   }
 
   get resourceApiURI() {
