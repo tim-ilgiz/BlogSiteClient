@@ -8,7 +8,8 @@
              placeholder="you@youremail.com"
              type="email"
              required
-             #email="ngModel" />
+             #email="ngModel"
+             pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
       <div [ngClass]="{'invalid-input-div':email.errors,
                        'valid-input-div' : !email.errors}"></div>
     </div>
