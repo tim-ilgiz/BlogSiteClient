@@ -11,6 +11,10 @@ export class ConfigService {
     return 'https://auth.detree.ru/api/account';
   }
 
+  get authApiURILogin() {
+    return 'https://auth.detree.ru/account/login';
+  }
+
   get resourceApiURI() {
     return 'http://localhost:5050/api';
   }

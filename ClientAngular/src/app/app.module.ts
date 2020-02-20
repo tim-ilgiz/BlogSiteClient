@@ -14,7 +14,6 @@ import { AppRoutingModule } from "./app-routing-module";
 import { WorkSpaceComponent } from './components/work-spase/work-space.component';
 import { BoardComponent } from './components/board/board.component';
 import { NgProgressModule } from "@ngx-progressbar/core";
-import { AuthorizationModule } from "./authorization/authorization.module";
 import { EditWindowModule } from "./editWindow";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component';
@@ -42,7 +41,6 @@ import {AccountModule} from "./account/account.module";
     FlexLayoutModule,
     AngularResizeElementModule,
     NgProgressModule,
-    AuthorizationModule,
     EditWindowModule,
     DragDropModule,
 
