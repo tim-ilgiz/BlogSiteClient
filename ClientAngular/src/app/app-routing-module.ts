@@ -6,7 +6,7 @@ import {AuthGuard} from "./core/Authentication/auth.guard";
 
 const routes: Routes = [
   {path:'', component: WorkSpaceComponent, canActivate:[AuthGuard]},
-  {path: 'auth-callback', component: AuthCallbackComponent}
+  {path: 'app-auth-callback', component: AuthCallbackComponent}
   //{path:'**', redirectTo:'', pathMatch:'full'}
 ];
 

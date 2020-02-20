@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgProgress, NgProgressRef} from "@ngx-progressbar/core";
+import { NgProgress, NgProgressRef } from "@ngx-progressbar/core";
 import {ProgressService} from "./shared/Services/ProgressService";
 import {DataService} from "./shared/Services/DataService";
 

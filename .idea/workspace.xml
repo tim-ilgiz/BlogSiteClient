@@ -291,6 +291,9 @@
       <workItem from="1581008511803" duration="1771000" />
       <workItem from="1581010312424" duration="10408000" />
       <workItem from="1581195118148" duration="2592000" />
+      <workItem from="1582146337659" duration="1986000" />
+      <workItem from="1582229587168" duration="621000" />
+      <workItem from="1582230274793" duration="4834000" />
     </task>
     <servers />
   </component>
@@ -299,6 +302,82 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/ClientAngular/node_modules/karma/config.tpl.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/outputPath/outputPath.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/outputPath/outputPath.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/moduleConcatenationPlugin/moduleConcatenationPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/moduleConcatenationPlugin/moduleConcatenationPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/uglifyJsPlugin/uglifyJsPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/uglifyJsPlugin/uglifyJsPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeJsonLoader/removeJsonLoader.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeJsonLoader/removeJsonLoader.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/commonsChunkPlugin/commonsChunkPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/commonsChunkPlugin/commonsChunkPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/noEmitOnErrorsPlugin/noEmitOnErrorsPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/noEmitOnErrorsPlugin/noEmitOnErrorsPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/extractTextPlugin/extractTextPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/extractTextPlugin/extractTextPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeDeprecatedPlugins/removeDeprecatedPlugins.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeDeprecatedPlugins/removeDeprecatedPlugins.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaderOptionsPlugin/loaderOptionsPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaderOptionsPlugin/loaderOptionsPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/namedModulesPlugin/namedModulesPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/namedModulesPlugin/namedModulesPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/types/NodePath.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/types/NodePath.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/resolve/resolve.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/resolve/resolve.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaders/loaders.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaders/loaders.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/bannerPlugin/bannerPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/bannerPlugin/bannerPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/outputPath/outputPath.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/outputPath/outputPath.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/moduleConcatenationPlugin/moduleConcatenationPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/moduleConcatenationPlugin/moduleConcatenationPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/uglifyJsPlugin/uglifyJsPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/uglifyJsPlugin/uglifyJsPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeJsonLoader/removeJsonLoader.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeJsonLoader/removeJsonLoader.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/commonsChunkPlugin/commonsChunkPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/commonsChunkPlugin/commonsChunkPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/noEmitOnErrorsPlugin/noEmitOnErrorsPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/noEmitOnErrorsPlugin/noEmitOnErrorsPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/extractTextPlugin/extractTextPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/extractTextPlugin/extractTextPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeDeprecatedPlugins/removeDeprecatedPlugins.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/removeDeprecatedPlugins/removeDeprecatedPlugins.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaderOptionsPlugin/loaderOptionsPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaderOptionsPlugin/loaderOptionsPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/namedModulesPlugin/namedModulesPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/namedModulesPlugin/namedModulesPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/types/NodePath.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/types/NodePath.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/resolve/resolve.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/resolve/resolve.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaders/loaders.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/loaders/loaders.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/bannerPlugin/bannerPlugin.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/bannerPlugin/bannerPlugin.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js.map" />
+        <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js" />
       </list>
     </option>
   </component>

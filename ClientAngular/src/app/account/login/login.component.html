@@ -3,7 +3,7 @@
     <h1>Login</h1>
 
     <div class="input-div">
-      <input [(ngModel)]="userRegistration.email"
+      <input [(ngModel)]="User.email"
              name="email"
              placeholder="you@youremail.com"
              type="email"
@@ -18,7 +18,7 @@
     </ul>
 
     <div class="input-div">
-      <input [(ngModel)]="userRegistration.password"
+      <input [(ngModel)]="User.password"
              name="password"
              placeholder="Password"
              type="password"
@@ -31,7 +31,11 @@
       <li>Пароль слишком корроткий</li>
     </ul>
 
-    <button type="submit">Войти</button>
+    <button type="submit">Войти
+        <span *ngIf="_loading" class="spinner-border spinner-border-sm mr-1"></span>
+    </button>
+
+    <div *ngIf="_errors" class="alert alert-danger mt-3 mb-0">{{_errors}}</div>
     <br>
     Еще нет аккаунта?
     <a [routerLink]="['/register']">Зарегистрируйтесь</a>

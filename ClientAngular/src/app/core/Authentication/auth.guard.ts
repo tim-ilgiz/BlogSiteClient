@@ -9,19 +9,19 @@ import { AuthService } from './auth.service';
 
 export class AuthGuard implements CanActivate {
 
-  public canActivated: boolean = false;
-
   constructor(private router: Router, private authService: AuthService) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    //if (this.authService.isAuthenticated()) return true;
-    if(!this.canActivated) {
-      this.router.navigate(['/login'], {queryParams: {redirect: state.url}, replaceUrl: true});
+  canActivate(route: ActivatedRouteSnapshot,
+              state: RouterStateSnapshot): boolean {
+
+    let user = this.authService.GetUser;
+
+    if (user) {
+      return true;
     }
 
-    return this.canActivated;
-  }
-  fakeActivate() {
-    this.canActivated = true;
+    this.router.navigate(['/login'],
+      {queryParams: {redirect: state.url}, replaceUrl: true}).then();
+    return false;
   }
 }

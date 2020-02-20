@@ -1,74 +1,48 @@
 import { Injectable } from "@angular/core";
-import { BaseService } from "../../shared/base.service";
 import { HttpClient } from "@angular/common/http";
-import { UserManager, UserManagerSettings, User } from 'oidc-client';
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
+import { map } from "rxjs/operators";
+
 import { ConfigService } from "../../shared/config.service";
-import { catchError } from 'rxjs/operators';
-import {UserRegistration} from "../../Domain/Models/Auth/UserRegistration";
+import { UserRegistration } from "../../Domain/Models/Auth/UserRegistration";
+import { User } from "../../Domain/Models/Auth/User";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends BaseService {
+export class AuthService {
 
-  private user: User | null;
-  private manager = new UserManager(getClientSettings());
+  private _currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
 
-  private _authNavStatusSource = new BehaviorSubject<boolean>(false);
-  authNavStatus$ = this._authNavStatusSource.asObservable();
-
-  constructor (private http: HttpClient, private configService: ConfigService) {
-    super();
-
-    this.manager.getUser().then(user => {
-      this.user = user;
-      this._authNavStatusSource.next(this.isAuthenticated());
-    });
+  constructor(private _http: HttpClient,
+              private _configService: ConfigService) {
+    this._currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUser = this._currentUserSubject.asObservable();
   };
+
+  public get GetUser (): User {
+    return this._currentUserSubject.value;
+  }
+
+  login(email: string, password: string) {
+    return this._http.post<any>(`${this._configService.authApiURILogin}`, { email, password })
+      .pipe(
+        map(user => {
+        // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this._currentUserSubject.next(user);
+          return user;
+      }));
+  }
 
   register(userRegistration: UserRegistration) {
-    return this.http.post(this.configService.authApiURI, userRegistration).pipe(catchError(this.handleError));
+    return this._http.post(this._configService.authApiURI, userRegistration);
   }
 
-  login() {
-    return this.manager.signinRedirect();
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
+    this._currentUserSubject.next(null);
   }
-
-  async completeAuthentication() {
-    this.user = await this.manager.signinRedirectCallback();
-    this._authNavStatusSource.next(this.isAuthenticated());
-  }
-
-  isAuthenticated(): boolean {
-    return this.user != null && !this.user.expired;
-  }
-
-  get authorizationHeaderValue(): string {
-    return `${this.user.token_type} ${this.user.access_token}`;
-  }
-
-  get name(): string {
-    return this.user != null ? this.user.profile.name : '';
-  }
-
-  async signOut() {
-    await this.manager.signoutRedirect();
-  }
-}
-
-export function getClientSettings(): UserManagerSettings
-{
-  return {
-    authority: 'https://auth.detree.ru/api/account',
-    client_id: 'angular_spa',
-    redirect_uri: 'http://localhost:4200/auth-callback',
-    post_logout_redirect_uri: 'http://localhost:4200/',
-    response_type: "id_token token",
-    scope: "openid profile email api.read",
-    filterProtocolClaims: true,
-    loadUserInfo: true,
-    automaticSilentRenew: true,
-    silent_redirect_uri: 'http://localhost:4200/silent-refresh.html'
-  };
 }

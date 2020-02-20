@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {AuthService} from "../../core/Authentication/auth.service";
 
 @Component({
   selector: 'app-auth-callback',
@@ -8,12 +9,18 @@ import {Router} from "@angular/router";
 })
 export class AuthCallbackComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private router: Router,
+              private activateRoute: ActivatedRoute,
+              private authService: AuthService) { }
 
-  ngOnInit() {
-    //Проверка авторизации, если да, шлет на workSpace
-    //Если нет -> login
+  error: boolean;
 
-    this.route.navigate(['/home']);
+  async ngOnInit() {
+    if(this.activateRoute.snapshot.fragment.indexOf('error')) {
+      this.error = true;
+      return;
+    }
+
+    await this.router.navigate(['/home']);
   }
 }
