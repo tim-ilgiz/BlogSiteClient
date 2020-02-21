@@ -5,23 +5,38 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
-  resolve: { extensions: ['.ts', '.js'] },
+  optimization: { splitChunks: { chunks:'all' } },
+  devServer: { port: 4200 },
+
+  resolve: { 
+      extensions: ['.ts', '.js'],
+      alias: {
+        '@CORE': PATH.resolve(__dirname, 'src/app/core'),
+        '@DOMAIN': PATH.resolve(__dirname, 'src/app/Domain'),
+        '@SHARED': PATH.resolve(__dirname, 'src/app/shared'),
+        '@COMPONENTS': PATH.resolve(__dirname, 'src/app/components')
+      }
+  },
 
   entry: {
     polyfills: './src/polyfills.ts',
-    //app: './test.ts'
     app: './src/main.ts'
   },
 
   module: {
     rules: [
-      { test: /\.ts$/, loader: 'awesome-typescript-loader' },
+      { test: /\.ts$/, 
+        use: [{
+            loader: 'awesome-typescript-loader',
+            options: { configFileName: PATH.resolve(__dirname, 'tsconfig.json') } }] },
 
-      { test: /\.html$/, loader: 'html-loader' },
+      { test: /\.(ts|js)$/, use: ['angular-router-loader'] },
+
+      { test: /\.html$/, use: ['html-loader'] },
 
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
 
-      { test: /\.(png|jpg|svg|gif)$/, use: ['file-loader'] },
+      { test: /\.(png|jpg|svg|gif)$/, loader: 'file-loader?name=assets/[name].[hash].[ext]' },
 
       { test: /\.scss$/, use: ['sass-loader', 'node-loader'] },
 
