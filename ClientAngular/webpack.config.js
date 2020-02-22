@@ -21,21 +21,32 @@ const optimizationFunc = () => {
     return config;
   };
 
-const filename = ext => IS_NODE_DEV ? `[name].${ext}` : `[name].[hash].${ext}`;
-const CSS_LOADER = (extra) => {
+const FILENAME_FUNC = ext => IS_NODE_DEV ? `[name].${ext}` : `[name].[hash].${ext}`;
+const CSS_LOADER_FUNC = (extra) => {
   const loaders = [
+    'to-string-loader',
       {
         loader: MINI_CSS_EXTRACT_PLUGIN.loader,
         options: { hmr: IS_NODE_DEV, reloadAll: true }
       },
     'css-loader'];
+
   if(extra) loaders.push(extra);
   return loaders;
 }
 
+const GET_BABLE_OPTIONS = preset => {
+  const options = {presets: [
+      '@babel/preset-env'
+    ],
+    plugins: ['@babel/plugin-proposal-class-properties'] };
+
+  if(preset) options.presets.push(preset);
+  return options;
+}
+
 module.exports = {
-  mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: IS_NODE_DEV ? 'source-map' : '',
   optimization: optimizationFunc(),
   devServer: { port: 4200, historyApiFallback: true, hot: IS_NODE_DEV},
 
@@ -50,12 +61,30 @@ module.exports = {
   },
 
   entry: {
-    polyfills: './src/polyfills.ts',
-    app: ['@babel/polyfill', './src/main.ts']
+    'polyfills': './src/polyfills.ts',
+    'app': './src/main.ts'
   },
 
   module: {
     rules: [
+      { test: /\.(ts|js)$/, use: ['angular-router-loader'] },
+
+      { test: /\.html$/, use: ['html-loader'] },
+
+      { test: /\.(png|jpg|svg|gif)$/, loader: 'file-loader?name=assets/[name].[hash].[ext]' },
+
+      { test: /\.(ttf|woff|woff2|eot)$/, use: ['file-loader'] },
+
+      { test: /\.css$/, use: CSS_LOADER_FUNC() },
+
+      { test: /\.(scss|sass)$/,
+        use: [
+          'to-string-loader',
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } }
+        ],
+      },
+
       { test: /\.ts$/,
         loaders: [
           {
@@ -65,33 +94,11 @@ module.exports = {
         ]
       },
 
-      { test: /\.(ts|js)$/, use: ['angular-router-loader'] },
-
-      { test: /\.html$/, use: ['html-loader'] },
-
-      { test: /\.(png|jpg|svg|gif)$/, loader: 'file-loader?name=assets/[name].[hash].[ext]' },
-
-      { test: /\.(ttf|woff|woff2|eot)$/, use: ['file-loader'] },
-      { test: /\.css$/,
-        use: CSS_LOADER()
-      },
-
-      { test: /\.s[ac]ss$/i,
-        use: CSS_LOADER('sass-loader')
-      },
-
-      { test: /\.less$/,
-        use: CSS_LOADER('less-loader')
-      },
-
-      { test: /\.js$/, exclude: /node_modules/,
+      { test: /\.js$/,
+        exclude: /node_modules/,
         loader: {
           loader: "babel-loader",
-          options: {
-            presets: [
-              '@babel/preset-env'
-            ]
-          }
+          options: GET_BABLE_OPTIONS()
         }
       },
     ]
@@ -99,7 +106,7 @@ module.exports = {
 
   output: {
     path: PATH.resolve(__dirname, './dist'),
-    filename: filename('js')
+    filename: FILENAME_FUNC('js')
   },
 
   plugins: [
@@ -110,7 +117,7 @@ module.exports = {
       }
     }),
     new CleanWebpackPlugin(),
-    new MINI_CSS_EXTRACT_PLUGIN({filename: filename('css')})
+    new MINI_CSS_EXTRACT_PLUGIN({filename: FILENAME_FUNC('css')})
   ]
 }
 
