@@ -19,9 +19,7 @@ export class ContentComponent {
   @Input() FocusFreeItemId :number = 0;
 
   SelectedPost: Post;
-  readonly maxSize :number = 390;
   backgroundImage = "assets/images/backgroundImage.jpg";
-  rollUpIcon = "assets/images/rollUp.png";
   editWindowId = "edit-window-1";
 
   style = "";
