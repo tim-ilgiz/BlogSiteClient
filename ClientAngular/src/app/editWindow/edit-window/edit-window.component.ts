@@ -12,7 +12,8 @@ export class EditWindowComponent implements OnInit, OnDestroy {
   element: any;
 
   constructor(private editWindowService: EditWindowService,
-              public el: ElementRef) {
+              private el: ElementRef) {
+
     this.element = el.nativeElement;
   }
 

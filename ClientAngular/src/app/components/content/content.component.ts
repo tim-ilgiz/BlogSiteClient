@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {Post} from "../Models/Post";
 import {DataService} from "../../shared/Services/DataService";
-import {EditWindowService} from "../../editWindow";
+import {EditWindowService} from "../../editWindow/editWindow.service";
 
 @Component({
   selector: 'app-content',

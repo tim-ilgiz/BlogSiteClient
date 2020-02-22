@@ -7,7 +7,7 @@ import { User } from "../../Domain/Models/Auth/User";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css', "../account.component.scss"]
+  styleUrls: ["../account.component.scss"]
 })
 export class LoginComponent implements OnInit {
 
