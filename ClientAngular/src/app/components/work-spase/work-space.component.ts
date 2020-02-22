@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { DataService } from '../../shared/Services/DataService';
 import { Post } from "../Models/Post";
 import { TreeItems } from "../Models/FreeItems";
@@ -11,14 +11,13 @@ import { Folder } from "../Models/Folder";
               '../../app.component.css',
   ]
 })
-export class WorkSpaceComponent implements OnInit {
+export class WorkSpaceComponent {
   _repository: DataService;
 
   selectedTreeItemId: number = 0;
   focusItemId: number = 0;
 
   loading :boolean;
-  animationToLeftRight :boolean = true;
   CorrectItems:Post[] = new Array<Post>();
   isBool = false;
   currentTreeItem: TreeItems;
@@ -31,11 +30,9 @@ export class WorkSpaceComponent implements OnInit {
   addTreeItemIcon = "assets/images/add.png";
   editTreeNameIcon = "assets/images/pencil.png";
 
-  constructor(repository: DataService) {
+  constructor(private repository: DataService) {
     this._repository = repository;
   }
-
-  ngOnInit() { }
 
   showLeftPanel() {
     this.isBool = !this.isBool;

@@ -150,18 +150,18 @@
     <property name="ts.external.directory.path" value="D:\Repos\BlogSiteClient\ClientAngular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\account" />
+      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\Domain\Models\Auth" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\core" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\shared" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\components" />
       <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\authorization" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\app\account" />
-      <recent name="D:\Repos\BlogSiteClient\ClientAngular\src\assets\images" />
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
-      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -294,6 +294,8 @@
       <workItem from="1582146337659" duration="1986000" />
       <workItem from="1582229587168" duration="621000" />
       <workItem from="1582230274793" duration="4834000" />
+      <workItem from="1582322951944" duration="3424000" />
+      <workItem from="1582380708896" duration="12633000" />
     </task>
     <servers />
   </component>
@@ -378,6 +380,8 @@
         <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js.map" />
         <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/migrate.js.map" />
         <option value="$PROJECT_DIR$/ClientAngular/node_modules/@webpack-cli/migrate/index.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/dist/app.379f863421503375f68b.js" />
+        <option value="$PROJECT_DIR$/ClientAngular/dist/vendors~app.379f863421503375f68b.js" />
       </list>
     </option>
   </component>

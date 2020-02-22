@@ -4,9 +4,7 @@ import { EditWindowComponent } from './edit-window/edit-window.component';
 
 @NgModule({
   declarations: [EditWindowComponent],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [EditWindowComponent]
 })
 export class EditWindowModule { }

@@ -11,7 +11,7 @@ export class DataService {
   //private url = 'https://localhost:44343/api/Repository';
   private url = 'https://api.detree.ru/api/repository';
 
-  constructor(private http: HttpClient, public progressService: ProgressService) {
+  constructor(private http: HttpClient, private progressService: ProgressService) {
   }
 
   public getItems() {

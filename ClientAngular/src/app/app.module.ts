@@ -7,18 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { ItemsComponent } from './components/items/items.component';
 import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { StyleDirective } from "./shared/Directives/style.directive";
 import { AngularResizeElementModule } from "angular-resize-element";
 import { AppRoutingModule } from "./app-routing-module";
 import { WorkSpaceComponent } from './components/work-spase/work-space.component';
-import { BoardComponent } from './components/board/board.component';
 import { NgProgressModule } from "@ngx-progressbar/core";
-import { EditWindowModule } from "./editWindow";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component';
 import {ShellModule} from "./shell/shell.module";
 import {AccountModule} from "./account/account.module";
+import {EditWindowModule} from "./editWindow/editWindow.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import {AccountModule} from "./account/account.module";
     ContentComponent,
     StyleDirective,
     WorkSpaceComponent,
-    BoardComponent,
     AuthCallbackComponent
   ],
   imports: [
@@ -43,7 +42,6 @@ import {AccountModule} from "./account/account.module";
     NgProgressModule,
     EditWindowModule,
     DragDropModule,
-
     AppRoutingModule,
     ShellModule,
     AccountModule
