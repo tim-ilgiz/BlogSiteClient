@@ -9,12 +9,18 @@ import {ConfigService} from "../shared/config.service";
 import {AccountComponent} from "./account.component";
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, AccountComponent],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    AccountComponent
+  ],
+
   imports: [
     CommonModule,
     FormsModule,
     AccountRoutingModule
   ],
+
   providers:[AuthService, ConfigService]
 })
 export class AccountModule { }

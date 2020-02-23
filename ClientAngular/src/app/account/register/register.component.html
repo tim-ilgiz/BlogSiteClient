@@ -13,10 +13,10 @@
            placeholder="Никнейм"
            required
            #name="ngModel"/>
-      <div [ngClass]="{'invalid-input-div':name.errors && isValidationForm,
-                       'valid-input-div' : !name.errors&& isValidationForm }"></div>
+      <div [ngClass]="{'invalid-input-div':name.errors && _isFormValid,
+                       'valid-input-div' : !name.errors&& _isFormValid }"></div>
     </div>
-    <ul *ngIf="name.errors && isValidationForm">
+    <ul *ngIf="name.errors && _isFormValid">
       <li>Поле не должно быть пустым</li>
     </ul>
 
@@ -28,10 +28,10 @@
              required
              minlength="5"
              type="password"/>
-      <div [ngClass]="{'invalid-input-div':pass.errors && isValidationForm,
-                       'valid-input-div' : !pass.errors }"></div>
+      <div [ngClass]="{'invalid-input-div':pass.errors && _isFormValid,
+                       'valid-input-div' : !pass.errors && _isFormValid}"></div>
     </div>
-    <ul *ngIf="pass.errors?.minlength && isValidationForm">
+    <ul *ngIf="pass.errors?.minlength && _isFormValid">
       <li>Пароль слишком корроткий</li>
     </ul>
 
@@ -42,10 +42,10 @@
            required
            type="password"
            #repeatPass="ngModel"/>
-      <div [ngClass]="{'invalid-input-div':repeatPass.errors && isValidationForm,
-                       'valid-input-div' : !repeatPass.errors && isValidationForm }"></div>
+      <div [ngClass]="{'invalid-input-div':repeatPass.errors && _isFormValid,
+                       'valid-input-div' : !repeatPass.errors && _isFormValid }"></div>
     </div>
-    <ul *ngIf="(repeatPass.errors && repeatPass.dirty || repeatPass.value != pass.value) && isValidationForm">
+    <ul *ngIf="(repeatPass.errors && repeatPass.dirty || repeatPass.value != pass.value) && _isFormValid">
       <li>Ваш пароль не совпадает</li>
     </ul>
 
@@ -56,14 +56,19 @@
            required
            #email="ngModel"
            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
-      <div [ngClass]="{'invalid-input-div':email.errors && isValidationForm,
-                       'valid-input-div' : !email.errors && isValidationForm}"></div>
+      <div [ngClass]="{'invalid-input-div':email.errors && _isFormValid,
+                       'valid-input-div' : !email.errors && _isFormValid}"></div>
     </div>
-    <ul *ngIf="email.errors && email.dirty && isValidationForm">
+    <ul *ngIf="email.errors && email.dirty && _isFormValid">
       <li>Введите корректный email</li>
     </ul>
 
-    <button type="submit">Зарегестрироваться</button>
+    <button type="submit">Registration
+      <span *ngIf="_isLoading" class="spinner-border spinner-border-sm mr-1"></span>
+    </button>
+
+    <div *ngIf="_errors" class="alert alert-danger mt-3 mb-0">{{_errors}}</div>
+
     <br>
       Уже зарегестрированы?
       <a [routerLink]="['/login']">Войдите</a>

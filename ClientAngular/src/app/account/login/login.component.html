@@ -1,5 +1,5 @@
 <div class="login-div">
-  <form novalidate (ngSubmit)="onSubmit()" >
+  <form #form='ngForm' novalidate (ngSubmit)="onSubmit(form)" >
     <h1>Login</h1>
 
     <div class="input-div">
@@ -10,10 +10,10 @@
              required
              #email="ngModel"
              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
-      <div [ngClass]="{'invalid-input-div':email.errors,
-                       'valid-input-div' : !email.errors}"></div>
+      <div [ngClass]="{'invalid-input-div':email.errors && _isFormValid,
+                       'valid-input-div' : !email.errors && _isFormValid}"></div>
     </div>
-    <ul *ngIf="email.errors && email.dirty">
+    <ul *ngIf="email.errors && email.dirty && _isFormValid">
       <li style="">Введите корректный email</li>
     </ul>
 
@@ -24,15 +24,15 @@
              type="password"
              minlength="5"
              #pass="ngModel"/>
-      <div [ngClass]="{'invalid-input-div':pass.errors,
-                       'valid-input-div' : !pass.errors}"></div>
+      <div [ngClass]="{'invalid-input-div':pass.errors && _isFormValid,
+                       'valid-input-div' : !pass.errors && _isFormValid}"></div>
     </div>
-    <ul *ngIf="pass.errors?.minlength">
+    <ul *ngIf="pass.errors?.minlength && _isFormValid">
       <li>Пароль слишком корроткий</li>
     </ul>
 
     <button type="submit">Войти
-        <span *ngIf="_loading" class="spinner-border spinner-border-sm mr-1"></span>
+        <span *ngIf="_isLoading" class="spinner-border spinner-border-sm mr-1"></span>
     </button>
 
     <div *ngIf="_errors" class="alert alert-danger mt-3 mb-0">{{_errors}}</div>

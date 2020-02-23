@@ -1,14 +1,16 @@
 const PATH = require('path');
 const HTML_WEBPACK_PLUGIN = require("html-webpack-plugin");
-//const COPY_WEBPACK_PLUGIN = require('copy-webpack-plugin');
 const MINI_CSS_EXTRACT_PLUGIN = require('mini-css-extract-plugin');
 const OPTIMIZE_CSS_ASSETS_WEBPACK_PLUGIN = require('optimize-css-assets-webpack-plugin');
 const TERSER_WEBPACK_PLUGIN = require('terser-webpack-plugin');
+//const COPY_WEBPACK_PLUGIN = require('copy-webpack-plugin');
+
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 const IS_NODE_DEV = process.env.NODE_ENV === 'development';
 const IS_NODE_PROD = !IS_NODE_DEV;
 console.log(`IS_NODE=${process.env.NODE_ENV}`);
+
 
 const optimizationFunc = () => {
   const config = { splitChunks: { chunks:'all' } };
@@ -35,7 +37,7 @@ const CSS_LOADER_FUNC = (extra) => {
   return loaders;
 }
 
-const GET_BABLE_OPTIONS = preset => {
+const GET_BABEL_OPTIONS = preset => {
   const options = {presets: [
       '@babel/preset-env'
     ],
@@ -50,6 +52,8 @@ module.exports = {
   optimization: optimizationFunc(),
   devServer: { port: 4200, historyApiFallback: true, hot: IS_NODE_DEV},
 
+  entry: { 'polyfills': './src/polyfills.ts', 'app': './src/main.ts' },
+
   resolve: {
       extensions: ['.ts', '.js'],
       alias: {
@@ -58,11 +62,6 @@ module.exports = {
         '@SHARED': PATH.resolve(__dirname, './src/app/shared'),
         '@COMPONENTS': PATH.resolve(__dirname, './src/app/components')
       }
-  },
-
-  entry: {
-    'polyfills': './src/polyfills.ts',
-    'app': './src/main.ts'
   },
 
   module: {
@@ -98,7 +97,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: {
           loader: "babel-loader",
-          options: GET_BABLE_OPTIONS()
+          options: GET_BABEL_OPTIONS()
         }
       },
     ]
@@ -112,11 +111,10 @@ module.exports = {
   plugins: [
     new HTML_WEBPACK_PLUGIN({
       template: './src/index.html',
-      minify: {
-        collapseWhitespace: IS_NODE_PROD
-      }
-    }),
+      minify: { collapseWhitespace: IS_NODE_PROD } }),
+
     new CleanWebpackPlugin(),
+
     new MINI_CSS_EXTRACT_PLUGIN({filename: FILENAME_FUNC('css')})
   ]
 }

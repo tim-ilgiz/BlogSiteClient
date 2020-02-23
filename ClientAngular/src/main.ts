@@ -1,4 +1,6 @@
 import "core-js/features/reflect";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import 'hammerjs';
 import { enableProdMode } from "@angular/core";
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
